@@ -906,10 +906,10 @@ export default function LandingClient() {
         const res = await fetch("/api/alpha-ledger?limit=5")
         if (!res.ok) return
         const data: LedgerResponse = await res.json()
-        setSignals(data.signals)
-        setTotalSignals(data.total)
+        setSignals(data.entries)
+        setTotalSignals(data.totalFiltered)
         // Count first-seen-today from returned signals
-        const todayCount = data.signals.filter((s) => isToday(s.calledAt)).length
+        const todayCount = data.entries.filter((s) => isToday(s.calledAt)).length
         setFirstSeenToday(todayCount)
       } catch {
         // fail silently
