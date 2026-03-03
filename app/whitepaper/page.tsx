@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Shield, FileText, ArrowRight, Download, BookOpen, Globe, CheckCircle2 } from "lucide-react"
 import { SolButton } from "@/components/ui/sol-button"
