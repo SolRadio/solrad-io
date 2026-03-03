@@ -11,8 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 
 export const metadata: Metadata = {
   title: "Lead-Time Proof Engine | SOLRAD",
@@ -37,8 +36,6 @@ export const metadata: Metadata = {
 
 export default async function LeadTimeProofPage() {
   return (
-    <>
-    <Navbar />
     <div className="container max-w-6xl mx-auto px-3 md:px-4 py-6 md:py-8">
       {/* Hero Section */}
       <div className="mb-6 md:mb-8">
@@ -262,7 +259,5 @@ export default async function LeadTimeProofPage() {
         </AlertDescription>
       </Alert>
     </div>
-    <Footer />
-    </>
   )
 }

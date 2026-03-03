@@ -1,6 +1,6 @@
 "use client"
 
-import { Navbar } from "@/components/navbar"
+
 import { AlertTriangle } from "lucide-react"
 import Link from "next/link"
 
@@ -12,9 +12,7 @@ export default function SawItFirstError({
   reset: () => void
 }) {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1 flex items-center justify-center px-4">
+    <main className="flex-1 flex items-center justify-center px-4">
         <div className="text-center flex flex-col items-center gap-4 max-w-sm">
           <AlertTriangle className="text-destructive" size={40} />
           <h1 className="text-xl font-black uppercase tracking-tight">
@@ -44,7 +42,6 @@ export default function SawItFirstError({
             </Link>
           </div>
         </div>
-      </main>
-    </div>
+    </main>
   )
 }

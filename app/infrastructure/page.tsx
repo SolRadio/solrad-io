@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { 
@@ -45,10 +44,7 @@ export const metadata: Metadata = {
 
 export default function InfrastructurePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-
-      <main className="flex-1">
+    <main>
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
@@ -398,9 +394,6 @@ export default function InfrastructurePage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </main>
   )
 }

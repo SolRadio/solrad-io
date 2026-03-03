@@ -3,8 +3,7 @@
 import { useEffect, useState, useCallback } from "react"
 import { useAutoRefresh } from "@/lib/use-auto-refresh"
 import { LiveIndicator } from "@/components/live-indicator"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
@@ -86,10 +85,7 @@ export default function TrackerClient() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background pb-[calc(env(safe-area-inset-bottom)+1rem)]">
-      <Navbar />
-
-      <main className="flex-1 container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -661,9 +657,6 @@ export default function TrackerClient() {
             ))}
           </div>
         )}
-      </main>
-
-      <Footer />
-    </div>
+    </main>
   )
 }

@@ -50,6 +50,5 @@ export default function SignalsError({
           SOLRAD Terminal
         </p>
       </div>
-    </div>
   )
 }

@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { ExternalLink, Clock, Shield, Zap, Hash } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
@@ -179,18 +178,15 @@ export default async function SawItFirstPage() {
   }, 0)
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-
-      <main className="flex-1">
+    <main>
         {/* Hero */}
         <section className="border-b border-border">
           <div className="max-w-4xl mx-auto px-4 py-12 md:py-16">
             <div className="text-center">
-              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-primary/80 mb-4 px-3 py-1 border border-primary/20 rounded-full">
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-primary/80 mb-4 px-3 py-1 border border-primary/20">
                 PROOF OF EDGE
               </span>
-              <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-balance">
+              <h1 className="font-mono text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4 text-balance">
                 SOLRAD SAW IT FIRST
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto text-pretty">
@@ -201,35 +197,35 @@ export default async function SawItFirstPage() {
 
             {/* CHANGE 5: Aggregate Stats — 4 columns, with guards for zero values */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-10 max-w-2xl mx-auto">
-              <div className="text-center p-3 md:p-4 rounded-lg border border-border bg-card">
+              <div className="text-center p-3 md:p-4 border border-border">
                 <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1">
                   Verified Detections
                 </p>
-                <p className="text-2xl md:text-3xl font-black font-mono text-foreground">
+                <p className="text-2xl md:text-3xl font-bold font-mono text-foreground">
                   {totalDetections || "\u2014"}
                 </p>
               </div>
-              <div className="text-center p-3 md:p-4 rounded-lg border border-border bg-card">
+              <div className="text-center p-3 md:p-4 border border-border">
                 <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1">
                   Win Rate
                 </p>
-                <p className="text-2xl md:text-3xl font-black font-mono text-green-500">
+                <p className="text-2xl md:text-3xl font-bold font-mono text-green-500">
                   {winRate > 0 ? `${winRate.toFixed(1)}%` : "\u2014"}
                 </p>
               </div>
-              <div className="text-center p-3 md:p-4 rounded-lg border border-border bg-card">
+              <div className="text-center p-3 md:p-4 border border-border">
                 <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1">
                   Avg 7d Move
                 </p>
-                <p className={`text-2xl md:text-3xl font-black font-mono ${avgGain !== null && avgGain >= 0 ? "text-green-500" : avgGain !== null ? "text-red-500" : "text-muted-foreground"}`}>
+                <p className={`text-2xl md:text-3xl font-bold font-mono ${avgGain !== null && avgGain >= 0 ? "text-green-500" : avgGain !== null ? "text-red-500" : "text-muted-foreground"}`}>
                   {avgGain !== null ? `${avgGain >= 0 ? "+" : ""}${avgGain.toFixed(1)}%` : "\u2014"}
                 </p>
               </div>
-              <div className="text-center p-3 md:p-4 rounded-lg border border-border bg-card">
+              <div className="text-center p-3 md:p-4 border border-border">
                 <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1">
                   Longest Lead
                 </p>
-                <p className="text-2xl md:text-3xl font-black font-mono text-foreground">
+                <p className="text-2xl md:text-3xl font-bold font-mono text-foreground">
                   {longestLead > 0 ? `${longestLead}d` : "\u2014"}
                 </p>
               </div>
@@ -253,7 +249,7 @@ export default async function SawItFirstPage() {
             </div>
 
             {sorted.length === 0 ? (
-              <div className="text-center py-20 border border-border rounded-lg bg-card">
+              <div className="text-center py-20 border border-border  bg-card">
                 <p className="text-sm font-mono text-muted-foreground uppercase tracking-wider">
                   No verified detections yet — check back soon
                 </p>
@@ -261,7 +257,7 @@ export default async function SawItFirstPage() {
             ) : (
               /* CHANGE 1: Scrollable container with fade */
               <div className="relative">
-                <div className="overflow-y-auto max-h-[600px] rounded-xl border border-border scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
+                <div className="overflow-y-auto max-h-[600px]  border border-border scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
                   <table className="w-full text-xs font-mono">
                     <thead className="sticky top-0 z-10 bg-card">
                       <tr className="border-b border-border text-left">
@@ -348,9 +344,9 @@ export default async function SawItFirstPage() {
             </h2>
 
             <div className="grid gap-5 md:grid-cols-3">
-              <div className="p-5 rounded-lg border border-border bg-card text-center">
+              <div className="p-5 border border-border text-center">
                 <div className="flex flex-col items-center gap-2 mb-3">
-                  <div className="h-8 w-8 rounded-md bg-primary/10 flex items-center justify-center">
+                  <div className="h-8 w-8  bg-primary/10 flex items-center justify-center">
                     <Zap className="h-4 w-4 text-primary" />
                   </div>
                   <h3 className="text-sm font-bold uppercase">Detection</h3>
@@ -363,9 +359,9 @@ export default async function SawItFirstPage() {
                 </p>
               </div>
 
-              <div className="p-5 rounded-lg border border-border bg-card text-center">
+              <div className="p-5 border border-border text-center">
                 <div className="flex flex-col items-center gap-2 mb-3">
-                  <div className="h-8 w-8 rounded-md bg-primary/10 flex items-center justify-center">
+                  <div className="h-8 w-8  bg-primary/10 flex items-center justify-center">
                     <Clock className="h-4 w-4 text-primary" />
                   </div>
                   <h3 className="text-sm font-bold uppercase">Tracking</h3>
@@ -378,9 +374,9 @@ export default async function SawItFirstPage() {
                 </p>
               </div>
 
-              <div className="p-5 rounded-lg border border-border bg-card text-center">
+              <div className="p-5 border border-border text-center">
                 <div className="flex flex-col items-center gap-2 mb-3">
-                  <div className="h-8 w-8 rounded-md bg-primary/10 flex items-center justify-center">
+                  <div className="h-8 w-8  bg-primary/10 flex items-center justify-center">
                     <Hash className="h-4 w-4 text-primary" />
                   </div>
                   <h3 className="text-sm font-bold uppercase">Proof</h3>
@@ -398,9 +394,6 @@ export default async function SawItFirstPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </main>
   )
 }

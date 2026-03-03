@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { BrowseContent } from "@/components/browse-content"
 import { Layers } from "lucide-react"
 import type { TokenScore } from "@/lib/types"
@@ -191,8 +190,7 @@ export default async function BrowsePage({
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      {/* JSON-LD Structured Data - ItemList + Breadcrumb */}
+    <>
       <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: SEO structured data
@@ -201,20 +199,17 @@ export default async function BrowsePage({
         }}
       />
 
-      <Navbar />
-
-      <main className="flex-1 w-full max-w-none px-4 md:px-6 xl:px-8 py-6">
+      <main className="w-full max-w-none px-4 md:px-6 xl:px-8 py-6">
         {/* Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <Layers className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl font-black uppercase tracking-tight">
-              Token Pool
-            </h1>
-          </div>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">Browse</p>
+          <h1 className="font-mono text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
+            Token Pool
+          </h1>
+          <div className="mt-3 h-px w-full bg-border mb-4" />
 
           {/* HOW IT WORKS card */}
-          <div className="bg-card border border-border rounded-xl p-5 max-w-4xl">
+          <div className="border border-border p-5 max-w-4xl">
             <h2 className="text-[10px] font-mono font-semibold uppercase tracking-widest text-muted-foreground/60 mb-2">
               How It Works
             </h2>
@@ -241,7 +236,7 @@ export default async function BrowsePage({
             {page > 1 && (
               <Link
                 href={`/browse?page=${page - 1}`}
-                className="px-4 py-2 rounded-lg border border-border bg-card hover:bg-muted transition-colors"
+                className="px-4 py-2 border border-border hover:bg-muted transition-colors"
               >
                 Previous
               </Link>
@@ -250,10 +245,10 @@ export default async function BrowsePage({
               <Link
                 key={p}
                 href={`/browse?page=${p}`}
-                className={`px-4 py-2 rounded-lg border transition-colors ${
+                className={`px-4 py-2 border transition-colors ${
                   p === page
                     ? "bg-primary text-primary-foreground border-primary"
-                    : "border-border bg-card hover:bg-muted"
+                    : "border-border hover:bg-muted"
                 }`}
               >
                 {p}
@@ -262,7 +257,7 @@ export default async function BrowsePage({
             {page < totalPages && (
               <Link
                 href={`/browse?page=${page + 1}`}
-                className="px-4 py-2 rounded-lg border border-border bg-card hover:bg-muted transition-colors"
+                className="px-4 py-2 border border-border hover:bg-muted transition-colors"
               >
                 Next
               </Link>
@@ -279,7 +274,7 @@ export default async function BrowsePage({
             <nav className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link
                 href="/"
-                className="p-4 rounded-lg border border-border bg-card hover:bg-muted hover:border-primary/50 transition-all"
+                className="p-4 border border-border hover:bg-muted hover:border-primary/50 transition-all"
               >
                 <div className="font-semibold mb-1">Homepage</div>
                 <div className="text-xs text-muted-foreground">
@@ -288,7 +283,7 @@ export default async function BrowsePage({
               </Link>
               <Link
                 href="/tracker"
-                className="p-4 rounded-lg border border-border bg-card hover:bg-muted hover:border-primary/50 transition-all"
+                className="p-4 border border-border hover:bg-muted hover:border-primary/50 transition-all"
               >
                 <div className="font-semibold mb-1">Tracker</div>
                 <div className="text-xs text-muted-foreground">
@@ -297,7 +292,7 @@ export default async function BrowsePage({
               </Link>
               <Link
                 href="/learn"
-                className="p-4 rounded-lg border border-border bg-card hover:bg-muted hover:border-primary/50 transition-all"
+                className="p-4 border border-border hover:bg-muted hover:border-primary/50 transition-all"
               >
                 <div className="font-semibold mb-1">Learn</div>
                 <div className="text-xs text-muted-foreground">
@@ -306,7 +301,7 @@ export default async function BrowsePage({
               </Link>
               <Link
                 href="/sitemap.xml"
-                className="p-4 rounded-lg border border-border bg-card hover:bg-muted hover:border-primary/50 transition-all"
+                className="p-4 border border-border hover:bg-muted hover:border-primary/50 transition-all"
               >
                 <div className="font-semibold mb-1">Sitemap</div>
                 <div className="text-xs text-muted-foreground">
@@ -317,8 +312,6 @@ export default async function BrowsePage({
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }

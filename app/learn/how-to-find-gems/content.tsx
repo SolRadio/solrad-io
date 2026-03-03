@@ -496,8 +496,6 @@ export function HowToFindGemsContent() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }

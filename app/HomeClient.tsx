@@ -9,7 +9,7 @@ import TokenRowMobile from "@/components/token-row-mobile"
 import { DesktopTerminal } from "@/components/desktop-terminal"
 import { MobileContainer } from "@/components/mobile-container"
 import { TabletTerminal } from "@/components/tablet-terminal"
-import { Footer } from "@/components/footer"
+
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -33,7 +33,7 @@ import { GemFinderModal } from "@/components/gem-finder-modal"
 import { Star } from "lucide-react"
 import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
-import { Navbar } from "@/components/navbar" // Import Navbar
+
 import { formatUsdPrice } from "@/lib/format"
 import { DataFreshnessBar } from "@/components/data-freshness-bar"
 import type { LeadTimeProof } from "@/lib/lead-time/types"
@@ -1010,8 +1010,7 @@ export default function HomeClient() {
           </div>
         </div>
         
-        {/* Footer at bottom of fixed viewport */}
-        <Footer />
+
       </div>
       
       {/* Welcome panel - slides up from bottom on first visit */}

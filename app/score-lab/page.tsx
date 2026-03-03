@@ -1,6 +1,4 @@
 import type { Metadata } from "next"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { ScoreLabClient } from "./ScoreLabClient"
 import { isProUser } from "@/lib/subscription"
 
@@ -26,12 +24,8 @@ export default async function ScoreLabPage() {
   const isPro = await isProUser()
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1">
-        <ScoreLabClient isPro={isPro} />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <ScoreLabClient isPro={isPro} />
+    </main>
   )
 }

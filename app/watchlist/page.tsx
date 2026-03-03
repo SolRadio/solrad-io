@@ -1,6 +1,4 @@
 import type { Metadata } from "next"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { WatchlistClient } from "./WatchlistClient"
 
 export const metadata: Metadata = {
@@ -23,12 +21,8 @@ export const metadata: Metadata = {
 
 export default function WatchlistPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1">
-        <WatchlistClient />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <WatchlistClient />
+    </main>
   )
 }

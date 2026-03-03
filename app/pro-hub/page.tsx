@@ -1,6 +1,4 @@
 import type { Metadata } from "next"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { ProHubClient } from "./ProHubClient"
 import { isProUser } from "@/lib/subscription"
 import { redirect } from "next/navigation"
@@ -20,12 +18,8 @@ export default async function ProHubPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1">
-        <ProHubClient />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <ProHubClient />
+    </main>
   )
 }

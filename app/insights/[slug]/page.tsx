@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, TrendingUp, Shield, Users } from "lucide-react"
@@ -94,7 +93,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
   const Icon = categoryIcons[article.category]
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <>
       {/* JSON-LD Article Schema */}
       <script
         type="application/ld+json"
@@ -132,9 +131,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
         }}
       />
 
-      <Navbar />
-
-      <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Article Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
@@ -193,8 +190,6 @@ export default async function InsightArticlePage({ params }: PageProps) {
           </CardContent>
         </Card>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }

@@ -1,6 +1,4 @@
 import type { Metadata } from "next"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { IntelligenceClient } from "./IntelligenceClient"
 
 export const metadata: Metadata = {
@@ -23,12 +21,8 @@ export const metadata: Metadata = {
 
 export default function IntelligencePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-      <main className="flex-1">
-        <IntelligenceClient />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <IntelligenceClient />
+    </main>
   )
 }

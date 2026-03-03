@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { AlertTriangle, RotateCcw, Home } from "lucide-react"
-import { Navbar } from "@/components/navbar"
+
 
 export default function ResearchError({
   error,
@@ -12,10 +12,7 @@ export default function ResearchError({
   reset: () => void
 }) {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <Navbar />
-
-      <div className="flex flex-1 flex-col items-center justify-center px-4">
+    <div className="flex flex-1 flex-col items-center justify-center px-4">
         <AlertTriangle className="h-12 w-12 text-destructive mb-6" />
 
         <h1 className="text-2xl font-bold font-mono uppercase tracking-widest text-foreground mb-3">
@@ -53,6 +50,5 @@ export default function ResearchError({
           SOLRAD Terminal
         </p>
       </div>
-    </div>
   )
 }

@@ -324,9 +324,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </Link>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }
 

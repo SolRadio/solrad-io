@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -112,8 +111,7 @@ export default function SolanaWalletTrackerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen flex flex-col bg-background">
-        <Navbar />
+    <>
 
         <main className="flex-1">
           {/* Hero Section */}
@@ -357,8 +355,7 @@ export default function SolanaWalletTrackerPage() {
           </section>
         </main>
 
-        <Footer />
-      </div>
+    </>
     </>
   )
 }

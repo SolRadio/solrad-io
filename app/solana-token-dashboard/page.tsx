@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { LayoutDashboard, TrendingUp, Activity, Zap, LineChart, Eye, Filter, BarChart3 } from "lucide-react"
@@ -103,8 +102,7 @@ export default function SolanaTokenDashboardPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       
-      <div className="min-h-screen flex flex-col bg-background">
-        <Navbar />
+    <>
         
         <main className="flex-1">
           <section className="container mx-auto px-4 py-16 md:py-24 text-center">
@@ -372,8 +370,7 @@ export default function SolanaTokenDashboardPage() {
           </section>
         </main>
 
-        <Footer />
-      </div>
+    </>
     </>
   )
 }
