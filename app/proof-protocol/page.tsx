@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import {
   Shield,
   Zap,
@@ -23,15 +22,11 @@ import { Button } from "@/components/ui/button"
 
 export default function ProofProtocolPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Navbar />
-      <main className="flex-1">
-        <Suspense fallback={null}>
-          <ProofProtocolContent />
-        </Suspense>
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <Suspense fallback={null}>
+        <ProofProtocolContent />
+      </Suspense>
+    </main>
   )
 }
 

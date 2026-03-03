@@ -1,9 +1,7 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Badge } from "@/components/ui/badge"
 import { Activity, Droplets, TrendingUp, Clock, Shield, AlertTriangle, Database, Ban, AlertCircle, CheckCircle2, Zap, XCircle } from "lucide-react"
 import type { Metadata } from "next"
 import { generateBreadcrumbSchema } from "@/lib/schema"
+import { SectionHeading } from "@/components/ui/section-heading"
 
 export const metadata: Metadata = {
   title: "SOLRAD Scoring Methodology | Intelligence Framework",
@@ -35,31 +33,25 @@ export default function ScoringPage() {
   ])
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      {/* SEO: Breadcrumb Schema */}
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
-      
-      <Navbar />
 
-      <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="max-w-5xl mx-auto">
+      <main className="py-12">
+        <div className="mx-auto max-w-5xl px-6">
 
-          {/* CHANGE 1 — PAGE HEADER */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
-              Scoring Methodology
-            </h1>
-            <p className="text-sm text-muted-foreground mt-2">Observational intelligence framework for Solana token analysis</p>
-          </div>
+          {/* Page Header */}
+          <SectionHeading as="h1" sub="Observational intelligence framework for Solana token analysis">
+            Scoring Methodology
+          </SectionHeading>
 
           {/* CHANGE 2 — SCORING PHILOSOPHY */}
-          <div className="bg-card border border-border rounded-xl p-8 max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-sm font-bold uppercase tracking-wide text-foreground mb-5">Scoring Philosophy</h2>
+          <div className="border border-border p-8 max-w-3xl mx-auto mb-10">
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-5">Scoring Philosophy</h2>
             <div className="space-y-4 text-sm text-muted-foreground">
               <p>
                 SOLRAD functions as an <strong className="text-foreground">observational intelligence system</strong> for Solana tokens. 
@@ -81,37 +73,37 @@ export default function ScoringPage() {
 
           {/* CHANGE 3 — SCORE BANDS */}
           <div className="mb-10">
-            <h2 className="text-sm font-bold uppercase tracking-wide text-foreground text-center mb-6">Score Bands</h2>
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-6">Score Bands</h2>
             <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-6">
               Scores range from 0-100 and indicate relative strength of current market conditions. Higher scores suggest
               stronger liquidity, activity, and lower structural risk signals based on available data.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <TrendingUp className="text-green-500" size={32} />
                 </div>
-                <p className="text-2xl font-black text-green-500 text-center mt-3">{"70 — 100"}</p>
+                <p className="text-2xl font-mono font-bold text-green-500 text-center mt-3">{"70 — 100"}</p>
                 <p className="text-xs font-mono text-green-400 uppercase text-center mt-1">High Signal</p>
                 <p className="text-xs text-muted-foreground text-center mt-2">
                   Strong liquidity depth, balanced trading activity, mature token age, healthy fundamentals
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <Activity className="text-yellow-500" size={32} />
                 </div>
-                <p className="text-2xl font-black text-yellow-500 text-center mt-3">{"50 — 69"}</p>
+                <p className="text-2xl font-mono font-bold text-yellow-500 text-center mt-3">{"50 — 69"}</p>
                 <p className="text-xs font-mono text-yellow-400 uppercase text-center mt-1">Moderate</p>
                 <p className="text-xs text-muted-foreground text-center mt-2">
                   Moderate liquidity, developing activity patterns, mixed signals across fundamentals
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <AlertTriangle className="text-muted-foreground" size={32} />
                 </div>
-                <p className="text-2xl font-black text-muted-foreground text-center mt-3">{"0 — 49"}</p>
+                <p className="text-2xl font-mono font-bold text-muted-foreground text-center mt-3">{"0 — 49"}</p>
                 <p className="text-xs font-mono text-muted-foreground uppercase text-center mt-1">Low Signal</p>
                 <p className="text-xs text-muted-foreground text-center mt-2">
                   Thin liquidity, minimal activity, very new tokens, or elevated structural risk signals
@@ -125,11 +117,11 @@ export default function ScoringPage() {
 
           {/* CHANGE 4 — CORE SIGNAL CATEGORIES */}
           <div className="mb-10">
-            <h2 className="text-sm font-bold uppercase tracking-wide text-foreground text-center mb-6">Core Signal Categories</h2>
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-6">Core Signal Categories</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
               {/* Liquidity Strength */}
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <Droplets className="text-primary" size={32} />
                 </div>
@@ -154,7 +146,7 @@ export default function ScoringPage() {
               </div>
 
               {/* Trading Activity */}
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <Activity className="text-primary" size={32} />
                 </div>
@@ -179,7 +171,7 @@ export default function ScoringPage() {
               </div>
 
               {/* Market Participation */}
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <TrendingUp className="text-primary" size={32} />
                 </div>
@@ -204,7 +196,7 @@ export default function ScoringPage() {
               </div>
 
               {/* Token Maturity */}
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <Clock className="text-primary" size={32} />
                 </div>
@@ -229,7 +221,7 @@ export default function ScoringPage() {
               </div>
 
               {/* Structural Risk — full width on desktop */}
-              <div className="bg-card border border-border rounded-xl p-6 text-center md:col-span-2 max-w-lg mx-auto w-full">
+              <div className="border border-border p-6 md:col-span-2 max-w-lg mx-auto w-full">
                 <div className="flex justify-center">
                   <Shield className="text-primary" size={32} />
                 </div>
@@ -265,7 +257,7 @@ export default function ScoringPage() {
 
             <h3 className="text-xs font-mono font-semibold uppercase tracking-widest text-muted-foreground/60 text-center mb-4">Risk Labels</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <Shield className="text-green-500" size={28} />
                 </div>
@@ -275,7 +267,7 @@ export default function ScoringPage() {
                   Does not guarantee safety—only indicates fewer present-state concerns.
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <AlertCircle className="text-yellow-500" size={28} />
                 </div>
@@ -285,7 +277,7 @@ export default function ScoringPage() {
                   Elevated watchfulness advised.
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <AlertTriangle className="text-destructive" size={28} />
                 </div>
@@ -300,7 +292,7 @@ export default function ScoringPage() {
             {/* CHANGE 6 — ACTIVITY STATES */}
             <h3 className="text-xs font-mono font-semibold uppercase tracking-widest text-muted-foreground/60 text-center mb-4">Activity States</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <Activity className="text-muted-foreground" size={28} />
                 </div>
@@ -309,7 +301,7 @@ export default function ScoringPage() {
                   Low volume, minimal participation. May indicate early-stage market or declining interest.
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <CheckCircle2 className="text-green-500" size={28} />
                 </div>
@@ -318,7 +310,7 @@ export default function ScoringPage() {
                   Balanced volume-to-liquidity ratio within typical organic ranges. Activity appears proportional to available depth.
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div className="border border-border p-6">
                 <div className="flex justify-center">
                   <Zap className="text-orange-400" size={28} />
                 </div>
@@ -336,7 +328,7 @@ export default function ScoringPage() {
           </div>
 
           {/* CHANGE 7 — WHAT SOLRAD DOES NOT DO */}
-          <div className="bg-card border border-destructive/20 rounded-xl p-8 max-w-3xl mx-auto text-center mb-10">
+          <div className="border border-destructive/20 p-8 max-w-3xl mx-auto mb-10">
             <div className="flex justify-center mb-4">
               <XCircle className="text-destructive" size={32} />
             </div>
@@ -381,7 +373,7 @@ export default function ScoringPage() {
           </div>
 
           {/* CHANGE 8 — DATA SOURCES */}
-          <div className="bg-card border border-border rounded-xl p-8 max-w-3xl mx-auto text-center mb-10">
+          <div className="border border-border p-8 max-w-3xl mx-auto mb-10">
             <div className="flex justify-center mb-4">
               <Database className="text-primary" size={32} />
             </div>
@@ -424,8 +416,6 @@ export default function ScoringPage() {
 
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }

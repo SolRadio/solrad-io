@@ -846,51 +846,7 @@ function FinalCTASection() {
   )
 }
 
-/* ── SECTION 7: FOOTER ───────────────────────────────────────────────── */
 
-function FooterSection() {
-  return (
-    <footer className="px-6 py-8" style={{ borderTop: "1px solid #1a1a1a" }}>
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4">
-        <span
-          className="font-mono text-xs uppercase"
-          style={{ color: "#3f3f46" }}
-        >
-          {"© 2026 SOLRAD"}
-        </span>
-        <div className="flex flex-wrap items-center gap-6">
-          {[
-            { label: "Terms", href: "/terms" },
-            { label: "Privacy", href: "/privacy" },
-            { label: "Whitepaper", href: "/whitepaper" },
-            { label: "Proof Protocol", href: "/proof-protocol" },
-          ].map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="font-mono text-xs uppercase transition-colors"
-              style={{ letterSpacing: "0.15em", color: "#3f3f46" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#a1a1aa")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#3f3f46")}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-        <span
-          className="flex items-center gap-1.5 font-mono text-xs uppercase"
-          style={{ color: "#3f3f46" }}
-        >
-          BUILT ON SOLANA
-          <span
-            className="inline-block h-1.5 w-1.5 rounded-full"
-            style={{ backgroundColor: "#9945FF" }}
-          />
-        </span>
-      </div>
-    </footer>
-  )
-}
 
 /* ── MAIN ─────────────────────────────────────────────────────────────── */
 
@@ -932,7 +888,6 @@ export default function LandingClient() {
       <SignalPreviewSection signals={signals} total={totalSignals} loading={loading} />
       <ProofPublicationsSection />
       <FinalCTASection />
-      <FooterSection />
     </main>
   )
 }

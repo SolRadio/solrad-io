@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -109,10 +108,7 @@ export function ProContent({ isPro }: { isPro: boolean }) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navbar />
-
-      <main className="flex-1">
+    <main>
 
         {/* ───────── SUCCESS / CANCELED BANNERS ───────── */}
         {isSuccess && (
@@ -374,9 +370,6 @@ export function ProContent({ isPro }: { isPro: boolean }) {
           </section>
         )}
 
-      </main>
-
-      <Footer />
-    </div>
+    </main>
   )
 }

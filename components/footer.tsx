@@ -3,57 +3,77 @@
 import Link from "next/link"
 import { Twitter } from "lucide-react"
 
-const footerLinks = [
+const navLinks = [
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Learn", href: "/learn" },
-  { label: "Security", href: "/security" },
-  { label: "Privacy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
   { label: "Scoring", href: "/scoring" },
-  { label: "Score Lab", href: "/score-lab" },
+  { label: "Security", href: "/security" },
   { label: "Research", href: "/research" },
+  { label: "Score Lab", href: "/score-lab" },
   { label: "Saw It First", href: "/saw-it-first" },
   { label: "Contact", href: "/contact" },
 ]
 
+const legalLinks = [
+  { label: "Terms", href: "/terms" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Whitepaper", href: "/whitepaper" },
+  { label: "Proof Protocol", href: "/proof-protocol" },
+]
+
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 bg-[oklch(0.08_0_0)] text-[oklch(0.55_0_0)] shrink-0">
-      <div className="flex items-center justify-center gap-x-4 px-4 py-2 text-[11px] font-mono whitespace-nowrap overflow-x-auto">
-        {/* Nav links */}
-        {footerLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="hover:text-foreground transition-colors"
+    <footer className="border-t border-border px-6 py-8">
+      <div className="mx-auto flex max-w-5xl flex-col gap-6">
+        {/* Nav links row */}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href="https://x.com/solaboratoryrad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Follow SOLRAD on X"
           >
-            {link.label}
-          </Link>
-        ))}
+            <Twitter className="h-3.5 w-3.5" />
+          </a>
+        </div>
 
-        {/* Separator */}
-        <span className="text-muted-foreground/30">{'·'}</span>
+        {/* Bottom row */}
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground/60">
+            {"\u00A9 2026 SOLRAD"}
+          </span>
 
-        {/* Meta text */}
-        <span>{'\u00A9 2026 SOLRAD'}</span>
-        <span className="text-muted-foreground/30">{'·'}</span>
-        <span>Solana Intelligence Engine</span>
-        <span className="text-muted-foreground/30">{'·'}</span>
-        <span>Read-only intel dashboard</span>
-        <span className="text-muted-foreground/30">{'·'}</span>
-        <span>Sources: QuickNode RPC + DexScreener</span>
+          <div className="flex flex-wrap items-center gap-6">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground/60 transition-colors hover:text-muted-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
 
-        {/* Twitter / X icon */}
-        <a
-          href="https://x.com/solaboratoryrad"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-foreground transition-colors ml-1"
-          aria-label="Follow SOLRAD on X"
-        >
-          <Twitter className="w-3 h-3" />
-        </a>
+          <span className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground/60">
+            BUILT ON SOLANA
+            <span
+              className="inline-block h-1.5 w-1.5 rounded-full"
+              style={{ backgroundColor: "#9945FF" }}
+            />
+          </span>
+        </div>
       </div>
     </footer>
   )

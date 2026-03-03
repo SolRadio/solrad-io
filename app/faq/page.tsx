@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import {
   Accordion,
@@ -122,8 +120,7 @@ export default function FAQPage() {
   const combinedSchema = generateCombinedSchema(faqSchema, breadcrumbSchema)
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      {/* JSON-LD FAQPage + Breadcrumb Schema for SEO */}
+    <>
       <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: SEO structured data
@@ -139,21 +136,17 @@ export default function FAQPage() {
         }}
       />
 
-      <Navbar />
-
-      <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          {/* Centered header */}
-          <div className="text-center max-w-2xl mx-auto mb-4">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <HelpCircle className="h-8 w-8 text-primary" aria-hidden="true" />
-              <h1 className="text-4xl font-black uppercase tracking-tight">Frequently Asked Questions</h1>
-            </div>
-            <p className="text-xl text-muted-foreground">Everything you need to know about SOLRAD</p>
-            <p className="text-xs text-muted-foreground text-center font-mono mt-1">
-              Press Ctrl+F (or Cmd+F on Mac) to search
-            </p>
-            <p className="text-xs text-muted-foreground text-center mt-2">
+      <main className="py-12">
+        <div className="mx-auto max-w-5xl px-6">
+          {/* Header */}
+          <div className="mb-10">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">FAQ</p>
+            <h1 className="font-mono text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
+              Frequently Asked Questions
+            </h1>
+            <div className="mt-3 h-px w-full bg-border" />
+            <p className="mt-4 text-sm text-muted-foreground">
+              Everything you need to know about SOLRAD.{" "}
               See also:{" "}
               <Link href="/scoring" className="text-primary hover:underline">Scoring Methodology</Link>
               {" \u00B7 "}
@@ -163,14 +156,9 @@ export default function FAQPage() {
             </p>
           </div>
 
-          <div className="h-8" />
-
           {/* General Questions */}
           <Card className="p-6 mb-8">
-            <div className="flex flex-col items-center gap-2 mb-6">
-              <Info className="h-6 w-6 text-primary" aria-hidden="true" />
-              <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-center">General</h2>
-            </div>
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-6">General</h2>
 
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="what-is-solrad">
@@ -222,10 +210,7 @@ export default function FAQPage() {
 
           {/* Scoring & Analysis */}
           <Card className="p-6 mb-8">
-            <div className="flex flex-col items-center gap-2 mb-6">
-              <TrendingUp className="h-6 w-6 text-primary" aria-hidden="true" />
-              <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-center">Scoring & Analysis</h2>
-            </div>
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-6">Scoring & Analysis</h2>
 
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="how-scoring-works">
@@ -282,10 +267,7 @@ export default function FAQPage() {
 
           {/* Data & Sources */}
           <Card className="p-6 mb-8">
-            <div className="flex flex-col items-center gap-2 mb-6">
-              <Database className="h-6 w-6 text-primary" aria-hidden="true" />
-              <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-center">Data & Sources</h2>
-            </div>
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-6">Data & Sources</h2>
 
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="where-data-from">
@@ -337,10 +319,7 @@ export default function FAQPage() {
 
           {/* Safety & Security */}
           <Card className="p-6 mb-8">
-            <div className="flex flex-col items-center gap-2 mb-6">
-              <Shield className="h-6 w-6 text-green-500" aria-hidden="true" />
-              <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-center">Safety & Security</h2>
-            </div>
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-6">Safety & Security</h2>
 
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="is-safe-to-use">
@@ -394,10 +373,7 @@ export default function FAQPage() {
 
           {/* Using SOLRAD */}
           <Card className="p-6 mb-8">
-            <div className="flex flex-col items-center gap-2 mb-6">
-              <Zap className="h-6 w-6 text-primary" aria-hidden="true" />
-              <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-center">Using SOLRAD</h2>
-            </div>
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-6">Using SOLRAD</h2>
 
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="how-to-find-gems">
@@ -457,26 +433,16 @@ export default function FAQPage() {
           </Card>
 
           {/* Still have questions? */}
-          <Card className="p-6 bg-primary/5 border-primary/20">
-            <div className="text-center">
-              <h2 className="text-xl font-bold mb-3">Still have questions?</h2>
-              <p className="text-muted-foreground mb-2">
-                Can{"'"}t find what you{"'"}re looking for? Send us a message and we{"'"}ll get back to you.
-              </p>
-              <p className="text-xs text-muted-foreground mb-4">
-                Or explore our <Link href="/scoring" className="text-primary hover:underline">full scoring docs</Link> and <Link href="/about" className="text-primary hover:underline">about page</Link>.
-              </p>
-              <Link href="/contact">
-                <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-bold uppercase text-sm">
-                  Contact Us
-                </button>
-              </Link>
-            </div>
-          </Card>
+          <div className="border border-primary/20 p-8 mt-8">
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground mb-3">Still have questions?</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Can{"'"}t find what you{"'"}re looking for?{" "}
+              <Link href="/contact" className="text-primary hover:underline">Send us a message</Link>{" "}
+              or explore our <Link href="/scoring" className="text-primary hover:underline">full scoring docs</Link> and <Link href="/about" className="text-primary hover:underline">about page</Link>.
+            </p>
+          </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }

@@ -1,9 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { Shield, FileText, ArrowRight, Download, BookOpen, Globe, CheckCircle2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+import { SolButton } from "@/components/ui/sol-button"
 
 export const metadata: Metadata = {
   title: "Whitepaper | SOLRAD Proof Protocol",
@@ -38,10 +36,8 @@ export default function WhitepaperPage() {
   ]
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <Navbar />
-      <main className="flex-1">
-        <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 space-y-12">
+    <main>
+      <div className="mx-auto max-w-5xl px-6 py-12 md:py-16 space-y-12">
           {/* Header */}
           <header className="space-y-4">
             <div className="flex items-center gap-3">
@@ -87,10 +83,10 @@ export default function WhitepaperPage() {
               download="SOLRAD-Proof-Protocol-Whitepaper-v1.pdf"
               className="inline-block"
             >
-              <Button className="font-mono text-sm tracking-widest bg-green-500 text-black hover:bg-green-400 px-8 py-5">
-                <Download className="h-4 w-4 mr-2" />
+              <span className="inline-flex items-center gap-2 border border-primary px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary/10">
+                <Download className="h-4 w-4" />
                 {"DOWNLOAD WHITEPAPER PDF \u2192"}
-              </Button>
+              </span>
             </a>
             <p className="text-xs font-mono text-muted-foreground">
               {"Version 1.0 \u00B7 February 2026 \u00B7 PDF"}
@@ -584,23 +580,14 @@ export default function WhitepaperPage() {
           </section>
 
           {/* Bottom CTA */}
-          <section className="border-t border-border pt-8 text-center space-y-4">
+          <section className="border-t border-border pt-8 space-y-4">
             <p className="text-sm font-mono text-muted-foreground">
               See the proof system running live with real Solana transactions.
             </p>
-            <Link href="/proof-protocol">
-              <Button
-                variant="outline"
-                className="font-mono text-xs tracking-widest border-green-500/30 text-green-400 hover:bg-green-500/10"
-              >
-                {"See the proof system live \u2192"}
-              </Button>
-            </Link>
+            <SolButton href="/proof-protocol">{"SEE THE PROOF SYSTEM LIVE \u2192"}</SolButton>
           </section>
         </div>
       </main>
-      <Footer />
-    </div>
   )
 }
 

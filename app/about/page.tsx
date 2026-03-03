@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import {
   Database,
   BarChart2,
@@ -16,6 +14,8 @@ import {
 import type { Metadata } from "next"
 import Link from "next/link"
 import { generateOrganizationSchema, generateWebApplicationSchema, generateBreadcrumbSchema, generateCombinedSchema } from "@/lib/schema"
+import { SectionHeading } from "@/components/ui/section-heading"
+import { SolButton } from "@/components/ui/sol-button"
 
 export const metadata: Metadata = {
   title: "About SOLRAD | Solana Token Intelligence",
@@ -28,17 +28,22 @@ export const metadata: Metadata = {
     "solana gem finder",
     "solana signal detection",
     "solana token analysis",
-    "solana token score 0-100",
-    "read-only solana analytics",
-    "solana token early detection",
+    "solana token risk assessment",
+    "solana alpha detection",
+    "solana early detection",
+    "solana on-chain proof",
+    "solana lead-time proof",
+    "crypto intelligence",
+    "crypto signal detection",
+    "crypto token scoring",
+    "memecoin scanner",
+    "dex token analysis",
+    "solana meme coin scanner"
   ],
-  alternates: {
-    canonical: "https://www.solrad.io/about",
-  },
   openGraph: {
     title: "About SOLRAD | Solana Token Intelligence & Scoring Platform",
     description:
-      "Read-only Solana token intelligence terminal. Deterministic scoring, signal detection, and verifiable timestamps. No wallet connection required.",
+      "Read-only Solana token intelligence. Deterministic scoring 0-100, signal detection with on-chain proofs, and verifiable lead-time timestamps. No wallet required.",
     url: "https://www.solrad.io/about",
     siteName: "SOLRAD",
     type: "website",
@@ -81,7 +86,7 @@ export default function AboutPage() {
   const combinedSchema = generateCombinedSchema(organizationSchema, softwareSchema, breadcrumbSchema, webPageSchema)
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -89,19 +94,18 @@ export default function AboutPage() {
         }}
       />
 
-      <Navbar />
-
-      <main className="flex-1">
-        {/* ── SECTION 1: HERO ── */}
+      <main>
+        {/* Hero */}
         <section className="py-20">
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <p className="text-xs font-mono text-primary uppercase tracking-widest mb-4">
+          <div className="mx-auto max-w-5xl px-6">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">
               About SOLRAD
             </p>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
+            <h1 className="font-mono text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
               Built to show what{"'"}s about to trend.
             </h1>
-            <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mt-4 leading-relaxed">
+            <div className="mt-3 h-px w-full bg-border" />
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               SOLRAD is an independent Solana token intelligence terminal built for solana token scoring.
               We score every active token 0-100 using observable on-chain signals — liquidity, volume,
               age, and token risk assessment factors — then timestamp every signal detection to the{" "}
@@ -111,237 +115,125 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── SECTION 2: 3 STAT CARDS ── */}
-        <section className="py-16 border-t border-border">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid gap-5 md:grid-cols-3">
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Database className="text-primary" size={32} aria-hidden="true" />
+        {/* Stat Cards */}
+        <section className="border-t border-border py-16">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="grid gap-px bg-border md:grid-cols-3">
+              {[
+                { icon: Database, value: "2", label: "Data Sources", sub: "DexScreener + QuickNode RPC", color: "text-primary" },
+                { icon: BarChart2, value: "0-100", label: "Composite Score", sub: "10 observable signal dimensions", color: "text-primary" },
+                { icon: Shield, value: "Read-Only", label: "No Wallet Needed", sub: "No keys. No trades. No custody.", color: "text-primary" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center bg-background p-6">
+                  <stat.icon className={stat.color} size={24} aria-hidden="true" />
+                  <p className="mt-3 font-mono text-2xl font-bold text-foreground">{stat.value}</p>
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                    {stat.label}
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">{stat.sub}</p>
                 </div>
-                <p className="text-3xl font-black text-foreground mt-3">2</p>
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wide">
-                  Data Sources
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  DexScreener + QuickNode RPC
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <BarChart2 className="text-primary" size={32} aria-hidden="true" />
-                </div>
-                <p className="text-3xl font-black text-foreground mt-3">0-100</p>
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wide">
-                  Composite Score
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  10 observable signal dimensions
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Shield className="text-green-500" size={32} aria-hidden="true" />
-                </div>
-                <p className="text-3xl font-black text-foreground mt-3">Read-Only</p>
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wide">
-                  No Wallet Needed
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  No keys. No trades. No custody.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ── SECTION 3: HOW IT ACTUALLY WORKS ── */}
-        <section className="py-20 border-t border-border">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground">
-                How It Works
-              </h2>
-              <p className="text-sm text-muted-foreground mt-2">
-                Four steps from raw blockchain data to verified proof
-              </p>
-            </div>
+        {/* How It Works */}
+        <section className="border-t border-border py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <SectionHeading sub="Four steps from raw blockchain data to verified proof">
+              How It Works
+            </SectionHeading>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Download className="text-primary" size={28} aria-hidden="true" />
+            <div className="grid gap-px bg-border md:grid-cols-2">
+              {[
+                {
+                  icon: Download, step: "01", label: "Ingest", title: "Data Collection",
+                  desc: "Every 2 minutes, we pull price, volume, liquidity, and pair data for active Solana tokens from DexScreener and QuickNode RPC.",
+                },
+                {
+                  icon: Calculator, step: "02", label: "Score", title: "Deterministic Scoring",
+                  desc: "We apply a fixed, published formula across 10 signal dimensions. Same inputs always produce the same score. No black box, no model drift.",
+                },
+                {
+                  icon: Zap, step: "03", label: "Detect", title: "Signal Detection",
+                  desc: <>When a token{"'"}s score crosses a threshold for the first time, we timestamp the detection and log it to the append-only Alpha Ledger. <Link href="/saw-it-first" className="text-primary hover:underline">See recent detections</Link>.</>,
+                },
+                {
+                  icon: CheckCircle, step: "04", label: "Prove", title: "Lead-Time Proof",
+                  desc: <>Every detection is logged with the Solana block number. This creates a verifiable timestamp proving exactly when we first observed the signal — before market reaction. Track <Link href="/signals" className="text-primary hover:underline">signal outcomes</Link> to see how detections perform over time.</>,
+                },
+              ].map((item) => (
+                <div key={item.step} className="flex flex-col bg-background p-6">
+                  <item.icon className="text-primary" size={20} aria-hidden="true" />
+                  <p className="mt-3 font-mono text-xs uppercase text-primary">{item.step} &mdash; {item.label}</p>
+                  <p className="mt-1 text-sm font-bold text-foreground">{item.title}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.desc}</p>
                 </div>
-                <p className="text-xs font-mono text-primary uppercase mt-3">01 — Ingest</p>
-                <p className="text-sm font-bold mt-1">Data Collection</p>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  Every 2 minutes, we pull price, volume, liquidity, and pair data for active
-                  Solana tokens from DexScreener and QuickNode RPC.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Calculator className="text-primary" size={28} aria-hidden="true" />
-                </div>
-                <p className="text-xs font-mono text-primary uppercase mt-3">02 — Score</p>
-                <p className="text-sm font-bold mt-1">Deterministic Scoring</p>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  We apply a fixed, published formula across 10 signal dimensions. Same inputs
-                  always produce the same score. No black box, no model drift.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Zap className="text-primary" size={28} aria-hidden="true" />
-                </div>
-                <p className="text-xs font-mono text-primary uppercase mt-3">03 — Detect</p>
-                <p className="text-sm font-bold mt-1">Signal Detection</p>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  When a token{"'"}s score crosses a threshold for the first time, we timestamp
-                  the detection and log it to the append-only Alpha Ledger.{" "}
-                  <Link href="/saw-it-first" className="text-primary hover:underline">See recent detections</Link>.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <CheckCircle className="text-green-500" size={28} aria-hidden="true" />
-                </div>
-                <p className="text-xs font-mono text-green-500 uppercase mt-3">04 — Prove</p>
-                <p className="text-sm font-bold mt-1">Lead-Time Proof</p>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  Every detection is logged with the Solana block number. This creates a
-                  verifiable timestamp proving exactly when we first observed the signal —
-                  before market reaction. Track{" "}
-                  <Link href="/signals" className="text-primary hover:underline">signal outcomes</Link>{" "}
-                  to see how detections perform over time.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ── SECTION 4: WHAT WE ARE NOT ── */}
-        <section className="py-20 border-t border-border">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="max-w-2xl mx-auto bg-card border border-primary/20 rounded-xl p-8 text-center">
-              <div className="flex justify-center">
-                <XCircle className="text-primary" size={32} aria-hidden="true" />
-              </div>
-              <h2 className="text-sm font-bold uppercase tracking-wide text-foreground mt-3 mb-6">
+        {/* What We Are Not */}
+        <section className="border-t border-border py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-2xl border border-primary/20 p-8">
+              <XCircle className="text-primary" size={24} aria-hidden="true" />
+              <h2 className="mt-3 mb-6 font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground">
                 What SOLRAD Is Not
               </h2>
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="text-center">
-                  <h3 className="text-xs font-bold uppercase text-foreground">Not a Trading Tool</h3>
-                  <p className="text-xs text-muted-foreground mt-1">We show data. You decide.</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-xs font-bold uppercase text-foreground">Not Predictive</h3>
-                  <p className="text-xs text-muted-foreground mt-1">We observe the present, not the future.</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-xs font-bold uppercase text-foreground">Not Custodial</h3>
-                  <p className="text-xs text-muted-foreground mt-1">We never touch your wallet or funds.</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="text-xs font-bold uppercase text-foreground">Not a Black Box</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Our full <Link href="/scoring" className="text-primary hover:underline">scoring methodology</Link> is published.</p>
-                </div>
+                {[
+                  { title: "Not a Trading Tool", desc: "We show data. You decide." },
+                  { title: "Not Predictive", desc: "We observe the present, not the future." },
+                  { title: "Not Custodial", desc: "We never touch your wallet or funds." },
+                  { title: "Not a Black Box", desc: <>Our full <Link href="/scoring" className="text-primary hover:underline">scoring methodology</Link> is published.</> },
+                ].map((item) => (
+                  <div key={String(item.title)}>
+                    <h3 className="text-xs font-bold uppercase text-foreground">{item.title}</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── SECTION 5: TRUST PRINCIPLES ── */}
-        <section className="py-20 border-t border-border">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl font-black uppercase tracking-tight text-foreground">
-                Why Traders Trust SOLRAD
-              </h2>
-            </div>
+        {/* Trust Principles */}
+        <section className="border-t border-border py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <SectionHeading>Why Traders Trust SOLRAD</SectionHeading>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Shield className="text-primary" size={28} aria-hidden="true" />
+            <div className="grid gap-px bg-border md:grid-cols-2">
+              {[
+                { icon: Shield, title: "Read-Only Architecture", desc: "SOLRAD has no wallet integration, no trade execution, and no access to user funds. It reads public blockchain data only." },
+                { icon: Eye, title: "Transparent Methodology", desc: <>Every scoring dimension is documented and published at <Link href="/scoring" className="text-primary hover:underline">solrad.io/scoring</Link>. No hidden factors.</> },
+                { icon: Lock, title: "Append-Only Ledger", desc: "Signal detections are written once and never edited. The historical record is immutable and exportable." },
+                { icon: Clock, title: "Verifiable Timestamps", desc: "Every detection is logged with Solana block numbers that can be independently verified on any block explorer." },
+              ].map((item) => (
+                <div key={item.title} className="flex flex-col bg-background p-6">
+                  <item.icon className="text-primary" size={20} aria-hidden="true" />
+                  <h3 className="mt-3 text-sm font-bold uppercase text-foreground">{item.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.desc}</p>
                 </div>
-                <h3 className="text-sm font-bold uppercase mt-3">Read-Only Architecture</h3>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  SOLRAD has no wallet integration, no trade execution, and no access to user
-                  funds. It reads public blockchain data only.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Eye className="text-primary" size={28} aria-hidden="true" />
-                </div>
-                <h3 className="text-sm font-bold uppercase mt-3">Transparent Methodology</h3>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  Every scoring dimension is documented and published at{" "}
-                  <Link href="/scoring" className="text-primary hover:underline">
-                    solrad.io/scoring
-                  </Link>
-                  . No hidden factors.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Lock className="text-primary" size={28} aria-hidden="true" />
-                </div>
-                <h3 className="text-sm font-bold uppercase mt-3">Append-Only Ledger</h3>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  Signal detections are written once and never edited. The historical record
-                  is immutable and exportable.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-xl p-6 text-center">
-                <div className="flex justify-center">
-                  <Clock className="text-primary" size={28} aria-hidden="true" />
-                </div>
-                <h3 className="text-sm font-bold uppercase mt-3">Verifiable Timestamps</h3>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  Every detection is logged with Solana block numbers that can be independently
-                  verified on any block explorer.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ── SECTION 6: CTA ── */}
-        <section className="py-20 border-t border-border">
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <div className="flex items-center justify-center gap-4 flex-wrap">
-              <Link
-                href="/"
-                className="bg-primary text-primary-foreground text-sm font-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                START EXPLORING
-              </Link>
-              <Link
-                href="/research"
-                className="border border-border text-sm font-bold px-6 py-3 rounded-lg hover:bg-muted transition-colors"
-              >
-                SEE THE PROOF
-              </Link>
+        {/* CTA */}
+        <section className="border-t border-border py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="flex flex-wrap items-center gap-4">
+              <SolButton href="/">START EXPLORING</SolButton>
+              <SolButton href="/research" variant="secondary">SEE THE PROOF</SolButton>
             </div>
-            <p className="text-xs text-muted-foreground text-center mt-4">
+            <p className="mt-4 text-xs text-muted-foreground">
               SOLRAD is independent. No VC funding. No token. No agenda.
             </p>
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }

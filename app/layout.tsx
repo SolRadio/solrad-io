@@ -5,6 +5,7 @@ import { dark } from "@clerk/themes"
 import { Toaster } from "sonner"
 import { Analytics } from "@vercel/analytics/next"
 import Navbar from "@/components/navbar"
+import { Footer } from "@/components/footer"
 import "./globals.css"
 
 const spaceMono = Space_Mono({
@@ -26,11 +27,12 @@ export default function RootLayout({
   return (
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en" className={`${spaceMono.variable} dark`}>
-        <body className="font-mono antialiased bg-[#000000] text-[#e5e5e5]">
+        <body className="font-mono antialiased bg-background text-foreground flex min-h-screen flex-col">
           <Navbar />
-          <div className="pt-14">
+          <div className="flex-1 pt-14">
             {children}
           </div>
+          <Footer />
           <Toaster
             theme="dark"
             toastOptions={{

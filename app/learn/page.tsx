@@ -1,9 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { BookOpen, Zap, TrendingUp, Wallet, Shield, ArrowRight, ChevronRight } from "lucide-react"
+import { Zap, TrendingUp, Wallet, Shield, ArrowRight, ChevronRight } from "lucide-react"
+import { SolButton } from "@/components/ui/sol-button"
 import { learnArticles, categories } from "@/lib/learn-articles"
 
 export const metadata: Metadata = {
@@ -78,8 +76,7 @@ export default function LearnPage() {
   const featuredArticles = learnArticles.slice(0, 3)
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      {/* JSON-LD */}
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
@@ -89,29 +86,28 @@ export default function LearnPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <Navbar />
+      <main className="py-12">
+        <div className="mx-auto max-w-5xl px-6">
 
-      <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto">
-
-          {/* ── HEADER (centered) ── */}
-          <div className="text-center mb-12">
-            <BookOpen className="h-10 w-10 text-primary mx-auto mb-3" aria-hidden="true" />
-            <h1 className="text-4xl font-black uppercase tracking-tight text-foreground">
+          {/* Header */}
+          <div className="mb-12">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4">Learn</p>
+            <h1 className="font-mono text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
               SOLRAD Learn
             </h1>
-            <p className="text-sm text-muted-foreground max-w-2xl mx-auto mt-3 leading-relaxed">
+            <div className="mt-3 h-px w-full bg-border" />
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               Master Solana token trading with expert guides on blockchain fundamentals,
               token analysis, wallet security, and scam prevention.
             </p>
-            <p className="text-xs text-muted-foreground mt-2">
+            <p className="mt-2 text-xs text-muted-foreground">
               Explore:{" "}
               <Link href="/scoring" className="text-primary hover:underline">Scoring Methodology</Link>
-              {" · "}
+              {" \u00B7 "}
               <Link href="/research" className="text-primary hover:underline">Proof Engine</Link>
-              {" · "}
+              {" \u00B7 "}
               <Link href="/browse" className="text-primary hover:underline">Token Pool</Link>
-              {" · "}
+              {" \u00B7 "}
               <Link href="/" className="text-primary hover:underline">Live Dashboard</Link>
             </p>
           </div>
@@ -124,8 +120,8 @@ export default function LearnPage() {
             <div className="grid md:grid-cols-3 gap-5">
               {featuredArticles.map((article) => (
                 <Link key={article.slug} href={`/learn/${article.slug}`}>
-                  <div className="bg-card border border-border rounded-xl p-6 h-full hover:border-primary/50 transition-colors cursor-pointer flex flex-col">
-                    <span className="text-[10px] font-mono bg-primary/10 text-primary border border-primary/20 rounded-full px-2 py-0.5 w-fit uppercase">
+                  <div className="border border-border p-6 h-full hover:border-primary/50 transition-colors cursor-pointer flex flex-col">
+                    <span className="text-[10px] font-mono bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 w-fit uppercase">
                       {article.readTime}
                     </span>
                     <h3 className="text-sm font-bold mt-3 leading-snug line-clamp-2">
@@ -155,7 +151,7 @@ export default function LearnPage() {
 
                 return (
                   <Link key={category.slug} href={`/learn/category/${category.slug}`}>
-                    <div className="bg-card border border-border rounded-xl p-6 text-center hover:border-primary/40 transition-colors cursor-pointer">
+                    <div className="border border-border p-6 hover:border-primary/40 transition-colors cursor-pointer">
                       <Icon className="text-primary mx-auto mb-3" size={28} aria-hidden="true" />
                       <h3 className="text-sm font-bold text-center">{category.title}</h3>
                       <p className="text-xs text-muted-foreground text-center mt-1">
@@ -205,31 +201,24 @@ export default function LearnPage() {
             </div>
           </section>
 
-          {/* ── CTA ── */}
-          <div className="bg-card border border-primary/30 rounded-xl p-8 text-center">
-            <h2 className="text-lg font-black uppercase tracking-tight">
+          {/* CTA */}
+          <div className="border border-primary/30 p-8">
+            <h2 className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-foreground">
               Ready to Find Solana Gems?
             </h2>
-            <p className="text-sm text-muted-foreground mt-2 max-w-md mx-auto">
+            <p className="mt-2 max-w-md text-sm text-muted-foreground">
               Apply what you{"'"}ve learned with SOLRAD{"'"}s real-time{" "}
               <Link href="/scoring" className="text-primary hover:underline">token scoring</Link>{" "}
               and{" "}
               <Link href="/about" className="text-primary hover:underline">intelligence terminal</Link>.
             </p>
             <div className="mt-5">
-              <Link href="/">
-                <Button size="lg" className="uppercase font-bold">
-                  Open Dashboard
-                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-                </Button>
-              </Link>
+              <SolButton href="/">OPEN DASHBOARD</SolButton>
             </div>
           </div>
 
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </>
   )
 }
