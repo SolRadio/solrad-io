@@ -16,7 +16,7 @@ function truncateEmail(email: string, max = 18): string {
   return email.slice(0, max) + "..."
 }
 
-export default function Navbar() {
+export function Navbar() {
   const { isSignedIn, user } = useUser()
   const { signOut, openSignIn } = useClerk()
   const pathname = usePathname()
@@ -267,3 +267,4 @@ export default function Navbar() {
     </nav>
   )
 }
+export default Navbar
