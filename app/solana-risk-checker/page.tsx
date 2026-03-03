@@ -93,15 +93,15 @@ export default function SolanaRiskCheckerPage() {
       
     <>
         
-        <main className="flex-1">
+        <main className="flex-1 max-w-5xl mx-auto px-6 py-12 w-full">
           <section className="container mx-auto px-4 py-16 md:py-24 text-center">
             <div className="flex justify-center mb-6">
-              <div className="p-4 rounded-2xl bg-primary/10">
+              <div className="p-4 border border-border bg-primary/5">
                 <Shield className="h-12 w-12 text-primary" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Solana <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Risk Checker</span>
+            <h1 className="font-mono text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6 text-foreground text-balance">
+              Solana Risk Checker
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Analyze Solana token safety before investing. Check rug pull risk, contract security, liquidity health, and holder concentration automatically.

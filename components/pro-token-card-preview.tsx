@@ -22,7 +22,7 @@ export function ProTokenCardPreview() {
         {/* ZONE A: HEADER - Token Identity + Pro Badge */}
         <div className="flex items-start justify-between gap-4 mb-6">
           <div className="flex items-center gap-3 flex-1 min-w-0">
-            <div className="rounded-xl shrink-0 ring-2 ring-primary/40">
+            <div className="rounded-none shrink-0 ring-2 ring-primary/40">
               <Image
                 src="/placeholder.svg"
                 alt="Example Token"

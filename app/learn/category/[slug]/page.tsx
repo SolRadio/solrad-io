@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
 
           {/* Header */}
-          <h1 className="text-4xl font-black uppercase tracking-tight mb-4">{category.title}</h1>
+          <h1 className="font-mono text-3xl font-bold uppercase tracking-tight text-foreground mb-4">{category.title}</h1>
           <p className="text-xl text-muted-foreground mb-8">{category.description}</p>
 
           {/* Articles */}
@@ -97,7 +97,6 @@ export default async function CategoryPage({ params }: PageProps) {
           </Link>
         </div>
       </main>
-    </>
   )
 }
 

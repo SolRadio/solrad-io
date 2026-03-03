@@ -188,7 +188,7 @@ export function ProContent({ isPro }: { isPro: boolean }) {
             {/* Desktop table */}
             <div className="hidden md:block">
               <div className="pt-3">
-              <div className="grid grid-cols-[1fr_160px_200px] gap-0 rounded-xl border border-border overflow-clip">
+              <div className="grid grid-cols-[1fr_160px_200px] gap-0 rounded-none border border-border overflow-clip">
                 {/* Header row */}
                 <div className="bg-muted/30 px-5 py-4 border-b border-border">
                   <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Feature</span>
@@ -224,7 +224,7 @@ export function ProContent({ isPro }: { isPro: boolean }) {
             {/* Mobile card layout */}
             <div className="md:hidden space-y-4">
               {/* FREE card */}
-              <div className="rounded-xl border border-border p-5 bg-card">
+              <div className="rounded-none border border-border p-5 bg-card">
                 <h3 className="text-lg font-bold mb-1">Free</h3>
                 <p className="text-xs text-muted-foreground mb-4">Essential Solana intelligence</p>
                 <ul className="space-y-2.5">
@@ -238,7 +238,7 @@ export function ProContent({ isPro }: { isPro: boolean }) {
               </div>
 
               {/* PRO card */}
-              <div className="rounded-xl border-2 border-primary p-5 bg-card relative">
+              <div className="rounded-none border-2 border-primary p-5 bg-card relative">
                 <div className="absolute -top-3 left-4">
                   <Badge className="bg-primary text-primary-foreground text-[9px] font-bold tracking-wider">MOST POPULAR</Badge>
                 </div>

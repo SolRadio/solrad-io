@@ -9,7 +9,7 @@ export default function SignInPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center">
       <div className="mb-8 text-center">
-        <p className="text-2xl font-black tracking-tight text-foreground">
+        <p className="text-2xl font-bold tracking-tight text-foreground">
           {"S\u25CFLRAD"}
         </p>
         <p className="text-xs font-mono text-muted-foreground mt-1 uppercase tracking-widest">

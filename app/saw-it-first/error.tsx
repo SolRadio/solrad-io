@@ -15,7 +15,7 @@ export default function SawItFirstError({
     <main className="flex-1 flex items-center justify-center px-4">
         <div className="text-center flex flex-col items-center gap-4 max-w-sm">
           <AlertTriangle className="text-destructive" size={40} />
-          <h1 className="text-xl font-black uppercase tracking-tight">
+          <h1 className="font-mono text-xl font-bold uppercase tracking-tight">
             Proof data unavailable
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">

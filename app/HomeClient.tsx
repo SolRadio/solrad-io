@@ -587,7 +587,7 @@ export default function HomeClient() {
       </div>
 
       {/* Full Desktop Experience (≥1280px) - 4-Column Layout */}
-      <div className="hidden xl:flex h-screen flex-col bg-[#0a0a0a] overflow-x-hidden max-w-[100vw]">
+      <div className="hidden xl:flex xl:-mt-14 h-screen flex-col bg-[#0a0a0a] overflow-x-hidden max-w-[100vw]">
         {/* Scanline overlay */}
         <div className="pointer-events-none fixed inset-0" style={{ zIndex: -1, background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 4px)' }} />
         <Navbar onRefresh={fetchTokens} isRefreshing={loading} lastUpdated={updatedAt ?? undefined} stale={stale} staleSeverity={staleSeverity} tokenCount={allTokens.length} />
@@ -614,7 +614,7 @@ export default function HomeClient() {
               <div className="mb-3 shrink-0 hidden md:block">
                 {/* Mobile stats removed - MobileContainer handles mobile view */}
                 <div className="hidden gap-2 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide">
-                  <div className="flex-shrink-0 p-3 rounded-xl border border-border bg-secondary min-w-[120px]">
+                  <div className="flex-shrink-0 p-3 rounded-none border border-border bg-secondary min-w-[120px]">
                     <div className="flex items-center gap-2 mb-1">
                       <Activity className="h-4 w-4 text-primary" />
                       <span className="text-[10px] uppercase font-bold text-muted-foreground">VOL 24H</span>
@@ -622,7 +622,7 @@ export default function HomeClient() {
                     <div className="text-lg font-bold font-mono">${(stats.totalVolume / 1000000).toFixed(1)}M</div>
                   </div>
 
-                  <div className="flex-shrink-0 p-3 rounded-xl border border-border bg-secondary min-w-[100px]">
+                  <div className="flex-shrink-0 p-3 rounded-none border border-border bg-secondary min-w-[100px]">
                     <div className="flex items-center gap-2 mb-1">
                       <TrendingUp className="h-4 w-4 text-accent" />
                       <span className="text-[10px] uppercase font-bold text-muted-foreground">AVG</span>
@@ -630,7 +630,7 @@ export default function HomeClient() {
                     <div className="text-lg font-bold font-mono">{stats.avgScore.toFixed(0)}</div>
                   </div>
 
-                  <div className="flex-shrink-0 p-3 rounded-xl border border-border bg-secondary min-w-[120px]">
+                  <div className="flex-shrink-0 p-3 rounded-none border border-border bg-secondary min-w-[120px]">
                     <div className="flex items-center gap-2 mb-1">
                       <Droplets className="h-4 w-4 text-green-400" />
                       <span className="text-[10px] uppercase font-bold text-muted-foreground">LIQ</span>
@@ -638,7 +638,7 @@ export default function HomeClient() {
                     <div className="text-lg font-bold font-mono">${(stats.totalLiquidity / 1000000).toFixed(1)}M</div>
                   </div>
 
-                  <div className="flex-shrink-0 p-3 rounded-xl border border-border bg-secondary min-w-[100px]">
+                  <div className="flex-shrink-0 p-3 rounded-none border border-border bg-secondary min-w-[100px]">
                     <div className="flex items-center gap-2 mb-1">
                       <Coins className="h-4 w-4 text-purple-400" />
                       <span className="text-[10px] uppercase font-bold text-muted-foreground">TOKENS</span>
@@ -646,7 +646,7 @@ export default function HomeClient() {
                     <div className="text-lg font-bold font-mono">{stats.tokensTracked}</div>
                   </div>
 
-                  <div className="flex-shrink-0 p-3 rounded-xl border border-border bg-secondary min-w-[110px]">
+                  <div className="flex-shrink-0 p-3 rounded-none border border-border bg-secondary min-w-[110px]">
                     <div className="flex items-center gap-2 mb-1">
                       <Sparkles className="h-4 w-4 text-cyan-400" />
                       <span className="text-[10px] uppercase font-bold text-muted-foreground">SOL</span>

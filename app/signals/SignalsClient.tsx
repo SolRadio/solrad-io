@@ -89,7 +89,7 @@ function SignalsTable({
   const isProUser = isPro
   const FREE_PREVIEW_ROWS = 3
   return (
-    <div className="rounded-xl border bg-card/50 backdrop-blur-sm overflow-hidden">
+    <div className="rounded-none border bg-card/50 backdrop-blur-sm overflow-hidden">
       {/* ── MOBILE CARD LIST ── */}
       <div className="sm:hidden divide-y divide-border/30">
         {(isProUser ? signals : signals.slice(0, FREE_PREVIEW_ROWS)).map((signal) => {
@@ -531,7 +531,7 @@ export function SignalsClient() {
               
               {/* Debug Panel - Only visible with ?debug=1 or admin auth */}
               {debug && showDebugPanel && (
-                <div className="rounded-xl border bg-card/30 p-4">
+                <div className="rounded-none border bg-card/30 p-4">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -709,7 +709,7 @@ export function SignalsClient() {
                 <h3 className="text-xs font-bold uppercase text-muted-foreground tracking-wider">Observed Highlights</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Top Winners */}
-                  <div className="rounded-xl border bg-card/50 backdrop-blur-sm p-4 space-y-3">
+                  <div className="rounded-none border bg-card/50 backdrop-blur-sm p-4 space-y-3">
                     <h4 className="text-sm font-bold uppercase tracking-tight text-green-400">Largest Positive Movement (24h)</h4>
                     <div className="space-y-2">
                       {topWinners.map((signal) => (
@@ -762,7 +762,7 @@ export function SignalsClient() {
                   </div>
                   
                   {/* Top Losers */}
-                  <div className="rounded-xl border bg-card/50 backdrop-blur-sm p-4 space-y-3">
+                  <div className="rounded-none border bg-card/50 backdrop-blur-sm p-4 space-y-3">
                     <h4 className="text-sm font-bold uppercase tracking-tight text-red-400">Largest Negative Movement (24h)</h4>
                     <div className="space-y-2">
                       {topLosers.map((signal) => (
@@ -843,7 +843,7 @@ export function SignalsClient() {
 
           {/* Debug Panel - Only visible with ?debug=1 or admin auth */}
           {!loading && debug && showDebugPanel && signals.length > 0 && (
-            <div className="rounded-xl border bg-card/30 p-4">
+            <div className="rounded-none border bg-card/30 p-4">
               <Button
                 variant="ghost"
                 size="sm"

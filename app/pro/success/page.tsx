@@ -1,7 +1,7 @@
 export default function ProSuccessPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center text-center px-4">
-      <h1 className="text-3xl font-black uppercase tracking-tight">
+      <h1 className="font-mono text-3xl font-bold uppercase tracking-tight">
         WELCOME TO PRO
       </h1>
       <p className="text-sm text-muted-foreground mt-3 max-w-sm">

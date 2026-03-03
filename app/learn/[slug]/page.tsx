@@ -167,7 +167,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <Badge variant="outline" className="mb-4 uppercase">
               {category.title}
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 leading-tight">
+            <h1 className="font-mono text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4 leading-tight">
               {article.title}
             </h1>
             <p className="text-xl text-muted-foreground mb-6">{article.description}</p>

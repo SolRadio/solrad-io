@@ -76,7 +76,7 @@ export default async function ByHoldersPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className="max-w-5xl mx-auto px-6 py-12">
         {/* Hero Section */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-3">

@@ -131,19 +131,16 @@ export default function SolanaGemFinderPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen flex flex-col bg-background">
-        <Navbar />
-
-        <main className="flex-1">
+      <main className="flex-1">
           {/* Hero Section */}
           <section className="container mx-auto px-4 py-16 md:py-24 text-center">
             <div className="flex justify-center mb-6">
-              <div className="p-4 rounded-2xl bg-primary/10">
+              <div className="p-4 border border-border bg-primary/5">
                 <Gem className="h-12 w-12 text-primary" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">
-              Solana Gem Finder – Discover High-Potential Tokens <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Early</span>
+            <h1 className="font-mono text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6 text-foreground text-balance">
+              Solana Gem Finder – Discover High-Potential Tokens Early
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-pretty">
               Find hidden Solana gems before they explode using SOLRAD's advanced token scoring system, real-time liquidity analysis, and comprehensive rug risk detection. Discover the next 100x opportunity before the crowd.
@@ -717,7 +714,7 @@ export default function SolanaGemFinderPage() {
           <section className="container mx-auto px-4 py-16 text-center">
             <Card className="p-12 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
               <div className="flex justify-center mb-6">
-                <div className="p-4 rounded-2xl bg-primary/10">
+                <div className="p-4 border border-border bg-primary/5">
                   <Sparkles className="h-10 w-10 text-primary" />
                 </div>
               </div>
@@ -758,9 +755,6 @@ export default function SolanaGemFinderPage() {
             </div>
           </section>
         </main>
-
-        <Footer />
-      </div>
     </>
   )
 }

@@ -53,7 +53,7 @@ export function LeadTimeProofsFeed() {
   const isEmpty = !loading && (!proofs || proofs.length === 0)
 
   return (
-    <div className="w-full rounded-xl border bg-card/50 backdrop-blur-sm p-4 space-y-4">
+    <div className="w-full rounded-none border bg-card/50 backdrop-blur-sm p-4 space-y-4">
       <div className="flex items-center gap-3">
         <Clock className="h-5 w-5 text-cyan-400" />
         <div>

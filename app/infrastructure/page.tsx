@@ -48,7 +48,7 @@ export default function InfrastructurePage() {
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6 text-foreground">
+            <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6 text-foreground">
               SOLRAD Infrastructure
             </h1>
             <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-8">
@@ -86,7 +86,7 @@ export default function InfrastructurePage() {
         <section className="border-t border-border bg-muted/30">
           <div className="container mx-auto px-4 py-16 md:py-24">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4 text-center">
                 System Overview
               </h2>
               <p className="text-lg text-muted-foreground text-center mb-12">
@@ -228,7 +228,7 @@ export default function InfrastructurePage() {
         <section className="border-t border-border">
           <div className="container mx-auto px-4 py-16 md:py-24">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4 text-center">
                 Security Model
               </h2>
               <p className="text-lg text-muted-foreground text-center mb-12">
@@ -283,7 +283,7 @@ export default function InfrastructurePage() {
         <section className="border-t border-border bg-muted/30">
           <div className="container mx-auto px-4 py-16 md:py-24">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4 text-center">
                 Reliability
               </h2>
               <p className="text-lg text-muted-foreground text-center mb-12">
@@ -337,7 +337,7 @@ export default function InfrastructurePage() {
         <section className="border-t border-border">
           <div className="container mx-auto px-4 py-16 md:py-24">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4 text-center">
                 Transparency Commitments
               </h2>
               <p className="text-lg text-muted-foreground text-center mb-12">
@@ -345,7 +345,7 @@ export default function InfrastructurePage() {
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6 bg-card border border-border rounded-xl text-center">
+                <Card className="p-6 bg-card border border-border rounded-none text-center">
                   <CheckCircle2 className="h-6 w-6 text-primary mx-auto" aria-hidden="true" />
                   <h3 className="text-sm font-bold text-center mt-3">Clear Scoring Explanations</h3>
                   <p className="text-xs text-muted-foreground text-center mt-2">
@@ -353,7 +353,7 @@ export default function InfrastructurePage() {
                   </p>
                 </Card>
 
-                <Card className="p-6 bg-card border border-border rounded-xl text-center">
+                <Card className="p-6 bg-card border border-border rounded-none text-center">
                   <Clock className="h-6 w-6 text-primary mx-auto" aria-hidden="true" />
                   <h3 className="text-sm font-bold text-center mt-3">Visible Data Timestamps</h3>
                   <p className="text-xs text-muted-foreground text-center mt-2">
@@ -361,7 +361,7 @@ export default function InfrastructurePage() {
                   </p>
                 </Card>
 
-                <Card className="p-6 bg-card border border-border rounded-xl text-center">
+                <Card className="p-6 bg-card border border-border rounded-none text-center">
                   <Lock className="h-6 w-6 text-primary mx-auto" aria-hidden="true" />
                   <h3 className="text-sm font-bold text-center mt-3">No Hidden Wallet Permissions</h3>
                   <p className="text-xs text-muted-foreground text-center mt-2">
@@ -377,7 +377,7 @@ export default function InfrastructurePage() {
         <section className="border-t border-border bg-muted/30">
           <div className="container mx-auto px-4 py-16 md:py-24">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-lg font-black uppercase tracking-tight text-center mb-4">
+              <h2 className="text-lg font-bold uppercase tracking-tight text-center mb-4">
                 Explore SOLRAD Intelligence
               </h2>
               <p className="text-sm text-muted-foreground mb-8">

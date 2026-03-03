@@ -206,7 +206,7 @@ export function MobileTerminal({
           )}
 
         {/* Segmented Tabs */}
-        <div className="flex bg-muted/30 rounded-xl p-1 gap-1">
+        <div className="flex bg-muted/30 rounded-none p-1 gap-1">
           {tabs.map((tab) => (
             <button
               key={tab.key}
@@ -294,7 +294,7 @@ function MobileTokenRow({ token, rank, onClick }: MobileTokenRowProps) {
       onClick={onClick}
       className="
         flex items-center gap-2.5 px-3 py-2.5
-        bg-card/80 border border-border/50 rounded-xl
+        bg-card/80 border border-border/50 rounded-none
         active:bg-muted/60 transition-colors cursor-pointer
         relative overflow-hidden
       "

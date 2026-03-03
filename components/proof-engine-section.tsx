@@ -58,7 +58,7 @@ export function ProofEngineSection() {
         <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">
           Why traders trust SOLRAD
         </p>
-        <h2 className="mb-2 text-2xl font-black uppercase tracking-tight text-foreground md:text-3xl text-balance">
+          <h2 className="mb-2 text-2xl font-bold uppercase tracking-tight text-foreground md:text-3xl text-balance">
           Every call. Timestamped. Verified.
         </h2>
         <p className="mb-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
@@ -70,7 +70,7 @@ export function ProofEngineSection() {
           {PILLARS.map((pillar) => (
             <div
               key={pillar.title}
-              className="flex flex-col gap-3 rounded-xl border border-border bg-background p-6"
+              className="flex flex-col gap-3 rounded-none border border-border bg-background p-6"
             >
               <pillar.icon className={`h-6 w-6 ${pillar.iconColor}`} />
               <h3 className="text-sm font-bold uppercase tracking-wide text-foreground">
@@ -84,7 +84,7 @@ export function ProofEngineSection() {
         </div>
 
         {/* Live feed panel */}
-        <div className="mt-8 rounded-xl border border-border bg-background p-4">
+        <div className="mt-8 rounded-none border border-border bg-background p-4">
           {/* Feed header */}
           <div className="mb-3 flex items-center gap-2">
             <span className="breathe-dot inline-block h-2 w-2 rounded-full bg-green-500" />

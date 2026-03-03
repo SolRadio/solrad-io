@@ -74,10 +74,7 @@ export default async function DailyReportPage({ params }: PageProps) {
         }}
       />
 
-      <div className="min-h-screen flex flex-col bg-background">
-        <Navbar />
-
-        <main className="flex-1 container mx-auto px-4 py-12">
+      <main className="flex-1 container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
             {/* Back Link */}
             <Link
@@ -98,7 +95,7 @@ export default async function DailyReportPage({ params }: PageProps) {
                 <span className="text-sm text-muted-foreground">{report.date}</span>
               </div>
 
-              <h1 className="text-4xl font-black uppercase tracking-tight mb-4">{report.title}</h1>
+              <h1 className="text-4xl font-bold uppercase tracking-tight mb-4">{report.title}</h1>
               <p className="text-xl text-muted-foreground">{report.summary}</p>
 
               {/* Tags */}
@@ -155,9 +152,6 @@ export default async function DailyReportPage({ params }: PageProps) {
             )}
           </div>
         </main>
-
-        <Footer />
-      </div>
     </>
   )
 }

@@ -161,7 +161,7 @@ export function BrowseContent({
   return (
     <>
       {/* How it works callout */}
-      <div className="rounded-xl border border-primary/20 bg-primary/5 p-5 max-w-4xl backdrop-blur-sm mb-6">
+      <div className="rounded-none border border-primary/20 bg-primary/5 p-5 max-w-4xl backdrop-blur-sm mb-6">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0 mt-0.5">
             <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -215,7 +215,7 @@ export function BrowseContent({
       </div>
 
       {/* Filters Row */}
-      <div className="mb-6 p-4 rounded-xl border border-border bg-card/50 backdrop-blur">
+      <div className="mb-6 p-4 rounded-none border border-border bg-card/50 backdrop-blur">
         <div className="flex flex-wrap gap-3 items-center">
           {/* Search */}
           <div className="relative flex-1 min-w-[200px]">

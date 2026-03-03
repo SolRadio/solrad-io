@@ -76,7 +76,7 @@ export function WalletsClient() {
       <div className="mb-8 text-center">
         <div className="flex items-center justify-center gap-3 mb-3">
           <Wallet className="h-8 w-8 text-primary" />
-          <h1 className="text-4xl font-black uppercase tracking-tight text-foreground">
+          <h1 className="text-4xl font-bold uppercase tracking-tight text-foreground">
             Wallet Intelligence
           </h1>
         </div>
@@ -98,7 +98,7 @@ export function WalletsClient() {
       </div>
 
       {/* CHANGE 3: Why This Matters */}
-      <div className="bg-card border border-border rounded-xl p-6 max-w-3xl mx-auto text-center">
+      <div className="border border-border p-6 max-w-3xl mx-auto text-center">
         <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">
           Why This Matters
         </p>
@@ -163,19 +163,19 @@ export function WalletsClient() {
       {/* CHANGE 5: Teaser Stats */}
       <div className="grid grid-cols-3 gap-4 mt-10 max-w-2xl mx-auto pb-8">
         <div className="text-center">
-          <div className="text-2xl font-black text-primary">500+</div>
+          <div className="text-2xl font-bold text-primary">500+</div>
           <div className="text-xs text-muted-foreground font-mono mt-1">
             WALLETS TRACKED
           </div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-black text-accent">REAL-TIME</div>
+          <div className="text-2xl font-bold text-accent">REAL-TIME</div>
           <div className="text-xs text-muted-foreground font-mono mt-1">
             DETECTION SPEED
           </div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-black text-green-500">0</div>
+          <div className="text-2xl font-bold text-green-500">0</div>
           <div className="text-xs text-muted-foreground font-mono mt-1">
             WALLET CONNECTION NEEDED
           </div>

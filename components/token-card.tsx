@@ -66,7 +66,7 @@ export const TokenCard = React.memo(function TokenCard({ token, rank, leadTimePr
             <div className="flex items-center gap-2 shrink-0">
               <span className="text-muted-foreground/80 font-mono text-xs tabular-nums font-semibold">#{rank}</span>
               <div 
-                className="rounded-xl shrink-0"
+                className="rounded-none shrink-0"
                 style={accent.ringStyle}
               >
                 <Image

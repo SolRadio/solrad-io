@@ -40,7 +40,7 @@ export function ScoreLabClient({ isPro }: { isPro: boolean }) {
       <div className="min-h-screen bg-background p-6">
         <div className="max-w-7xl mx-auto text-center">
           <FlaskConical className="text-primary mx-auto mb-3" size={36} aria-hidden="true" />
-          <h1 className="text-4xl font-black uppercase text-center text-foreground">SCORE LAB</h1>
+          <h1 className="text-4xl font-bold uppercase text-center text-foreground">SCORE LAB</h1>
           <p className="text-sm text-muted-foreground text-center mt-2">Loading snapshots...</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ export function ScoreLabClient({ isPro }: { isPro: boolean }) {
       <div className="min-h-screen bg-background p-6">
         <div className="max-w-7xl mx-auto text-center">
           <FlaskConical className="text-primary mx-auto mb-3" size={36} aria-hidden="true" />
-          <h1 className="text-4xl font-black uppercase text-center text-foreground">SCORE LAB</h1>
+          <h1 className="text-4xl font-bold uppercase text-center text-foreground">SCORE LAB</h1>
           <p className="text-destructive mt-2">Failed to load data</p>
         </div>
       </div>
@@ -78,7 +78,7 @@ export function ScoreLabClient({ isPro }: { isPro: boolean }) {
         {/* 1. PAGE HEADER — always visible */}
         <div className="text-center">
           <FlaskConical className="text-primary mx-auto mb-3" size={36} aria-hidden="true" />
-          <h1 className="text-4xl font-black uppercase text-center text-foreground">
+          <h1 className="text-4xl font-bold uppercase text-center text-foreground">
             SCORE LAB
           </h1>
           <p className="text-sm text-muted-foreground text-center mt-2">
@@ -109,23 +109,23 @@ export function ScoreLabClient({ isPro }: { isPro: boolean }) {
           </div>
           <div className="pointer-events-none select-none" style={{ filter: "blur(6px)", opacity: 0.6 }}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="rounded-xl border p-4 bg-green-950/20 border-green-900 text-center">
+              <div className="rounded-none border p-4 bg-green-950/20 border-green-900 text-center">
                 <div className="text-sm font-medium text-green-400">High (8-10)</div>
-                <div className="text-2xl font-black mt-2">{data.winRates.high.winRate.toFixed(1)}%</div>
+                <div className="text-2xl font-bold mt-2">{data.winRates.high.winRate.toFixed(1)}%</div>
                 <div className="text-[10px] font-mono text-muted-foreground mt-1">
                   {data.winRates.high.wins} / {data.winRates.high.total} tokens
                 </div>
               </div>
-              <div className="rounded-xl border p-4 bg-yellow-950/20 border-yellow-900 text-center">
+              <div className="rounded-none border p-4 bg-yellow-950/20 border-yellow-900 text-center">
                 <div className="text-sm font-medium text-yellow-400">Medium (6-7)</div>
-                <div className="text-2xl font-black mt-2">{data.winRates.medium.winRate.toFixed(1)}%</div>
+                <div className="text-2xl font-bold mt-2">{data.winRates.medium.winRate.toFixed(1)}%</div>
                 <div className="text-[10px] font-mono text-muted-foreground mt-1">
                   {data.winRates.medium.wins} / {data.winRates.medium.total} tokens
                 </div>
               </div>
-              <div className="rounded-xl border p-4 bg-red-950/20 border-red-900 text-center">
+              <div className="rounded-none border p-4 bg-red-950/20 border-red-900 text-center">
                 <div className="text-sm font-medium text-red-400">Low (0-5)</div>
-                <div className="text-2xl font-black mt-2">{data.winRates.low.winRate.toFixed(1)}%</div>
+                <div className="text-2xl font-bold mt-2">{data.winRates.low.winRate.toFixed(1)}%</div>
                 <div className="text-[10px] font-mono text-muted-foreground mt-1">
                   {data.winRates.low.wins} / {data.winRates.low.total} tokens
                 </div>
@@ -146,11 +146,11 @@ export function ScoreLabClient({ isPro }: { isPro: boolean }) {
           </div>
 
           {/* Overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-background/80 backdrop-blur-sm rounded-xl border border-primary/20 min-h-[400px] p-8 text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-background/80 backdrop-blur-sm rounded-none border border-primary/20 min-h-[400px] p-8 text-center">
             <FlaskConical className="text-primary" size={32} aria-hidden="true" />
 
             <div>
-              <p className="text-lg font-black uppercase tracking-tight">
+              <p className="text-lg font-bold uppercase tracking-tight">
                 SCORE LAB IS PRO-ONLY
               </p>
               <p className="text-sm text-muted-foreground mt-2 max-w-sm">
@@ -205,7 +205,7 @@ function FullPageContent({ data }: { data: ScoreLabData }) {
       {/* Header */}
       <div className="text-center">
         <FlaskConical className="text-primary mx-auto mb-3" size={36} aria-hidden="true" />
-        <h1 className="text-4xl font-black uppercase text-center text-foreground">SCORE LAB</h1>
+        <h1 className="text-4xl font-bold uppercase text-center text-foreground">SCORE LAB</h1>
         <p className="text-sm text-muted-foreground text-center mt-2">
           Live performance data from SOLRAD{"'"}s scoring engine — updated continuously.
         </p>
@@ -213,17 +213,17 @@ function FullPageContent({ data }: { data: ScoreLabData }) {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-card border border-border rounded-xl p-4 text-center">
+        <div className="bg-card border border-border rounded-none p-4 text-center">
           <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Total Snapshots (24h)</div>
-          <div className="text-3xl font-black text-foreground mt-1">{data.totalSnapshots.toLocaleString()}</div>
+          <div className="text-3xl font-bold text-foreground mt-1">{data.totalSnapshots.toLocaleString()}</div>
         </div>
-        <div className="bg-card border border-border rounded-xl p-4 text-center">
+        <div className="bg-card border border-border rounded-none p-4 text-center">
           <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Unique Tokens</div>
-          <div className="text-3xl font-black text-foreground mt-1">{data.uniqueTokens.toLocaleString()}</div>
+          <div className="text-3xl font-bold text-foreground mt-1">{data.uniqueTokens.toLocaleString()}</div>
         </div>
-        <div className="bg-card border border-border rounded-xl p-4 text-center">
+        <div className="bg-card border border-border rounded-none p-4 text-center">
           <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Data Window</div>
-          <div className="text-3xl font-black text-foreground mt-1">24 hours</div>
+          <div className="text-3xl font-bold text-foreground mt-1">24 hours</div>
         </div>
       </div>
 
@@ -236,19 +236,19 @@ function FullPageContent({ data }: { data: ScoreLabData }) {
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="rounded-xl border p-4 bg-green-950/20 border-green-900 text-center">
+          <div className="rounded-none border p-4 bg-green-950/20 border-green-900 text-center">
             <div className="text-sm font-medium text-green-400">High (8-10)</div>
-            <div className="text-2xl font-black mt-2">{data.winRates.high.winRate.toFixed(1)}%</div>
+            <div className="text-2xl font-bold mt-2">{data.winRates.high.winRate.toFixed(1)}%</div>
             <div className="text-[10px] font-mono text-muted-foreground mt-1">{data.winRates.high.wins} / {data.winRates.high.total} tokens</div>
           </div>
-          <div className="rounded-xl border p-4 bg-yellow-950/20 border-yellow-900 text-center">
+          <div className="rounded-none border p-4 bg-yellow-950/20 border-yellow-900 text-center">
             <div className="text-sm font-medium text-yellow-400">Medium (6-7)</div>
-            <div className="text-2xl font-black mt-2">{data.winRates.medium.winRate.toFixed(1)}%</div>
+            <div className="text-2xl font-bold mt-2">{data.winRates.medium.winRate.toFixed(1)}%</div>
             <div className="text-[10px] font-mono text-muted-foreground mt-1">{data.winRates.medium.wins} / {data.winRates.medium.total} tokens</div>
           </div>
-          <div className="rounded-xl border p-4 bg-red-950/20 border-red-900 text-center">
+          <div className="rounded-none border p-4 bg-red-950/20 border-red-900 text-center">
             <div className="text-sm font-medium text-red-400">Low (0-5)</div>
-            <div className="text-2xl font-black mt-2">{data.winRates.low.winRate.toFixed(1)}%</div>
+            <div className="text-2xl font-bold mt-2">{data.winRates.low.winRate.toFixed(1)}%</div>
             <div className="text-[10px] font-mono text-muted-foreground mt-1">{data.winRates.low.wins} / {data.winRates.low.total} tokens</div>
           </div>
         </div>
@@ -262,7 +262,7 @@ function FullPageContent({ data }: { data: ScoreLabData }) {
             PAST PERFORMANCE — NOT A GUARANTEE
           </span>
         </div>
-        <div className="overflow-x-auto rounded-xl border border-border">
+        <div className="overflow-x-auto rounded-none border border-border">
           <table className="w-full text-sm font-mono">
             <thead>
               <tr className="bg-muted text-xs font-mono uppercase text-muted-foreground">
@@ -296,7 +296,7 @@ function FullPageContent({ data }: { data: ScoreLabData }) {
           <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground">RECENT SNAPSHOTS</h2>
           <span className="text-[10px] font-mono text-muted-foreground/60 block mt-1">Showing last 50 snapshots</span>
         </div>
-        <div className="max-h-[500px] overflow-y-auto rounded-xl border border-border">
+        <div className="max-h-[500px] overflow-y-auto rounded-none border border-border">
           <table className="w-full text-sm font-mono">
             <thead className="sticky top-0 bg-background z-10 border-b border-border">
               <tr className="bg-muted text-xs font-mono uppercase text-muted-foreground">
@@ -339,7 +339,7 @@ function FullPageContent({ data }: { data: ScoreLabData }) {
       </div>
 
       {/* Disclaimer */}
-      <div className="max-w-2xl mx-auto text-center mt-8 p-4 bg-muted/30 rounded-xl border border-border">
+      <div className="max-w-2xl mx-auto text-center mt-8 p-4 bg-muted/30 rounded-none border border-border">
         <p className="text-[10px] font-mono text-muted-foreground leading-relaxed">
           Score Lab shows historical scoring performance data for transparency purposes.
           Past signal performance does not guarantee future results.

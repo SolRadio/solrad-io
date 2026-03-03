@@ -104,15 +104,15 @@ export default function SolanaTokenDashboardPage() {
       
     <>
         
-        <main className="flex-1">
+        <main className="flex-1 max-w-5xl mx-auto px-6 py-12 w-full">
           <section className="container mx-auto px-4 py-16 md:py-24 text-center">
             <div className="flex justify-center mb-6">
-              <div className="p-4 rounded-2xl bg-primary/10">
+              <div className="p-4 border border-border bg-primary/5">
                 <LayoutDashboard className="h-12 w-12 text-primary" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Professional <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Solana Token Dashboard</span>
+            <h1 className="font-mono text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6 text-foreground text-balance">
+              Professional Solana Token Dashboard
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Real-time analytics, market intelligence, and comprehensive token tracking for Solana. Monitor trending tokens, analyze risk, and discover opportunities.

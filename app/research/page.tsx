@@ -60,7 +60,6 @@ export default async function ResearchPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navbar />
       <main className="flex-1 container mx-auto px-3 md:px-4 py-6 md:py-12">
         <div className="max-w-7xl mx-auto">
           {process.env.NODE_ENV !== "production" && (
@@ -78,7 +77,6 @@ export default async function ResearchPage() {
           <ResearchClient reports={serialized} />
         </div>
       </main>
-      <Footer />
     </div>
   )
 }

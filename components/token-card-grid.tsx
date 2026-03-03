@@ -485,7 +485,7 @@ export function TokenCardGrid({ token, rank }: TokenCardGridProps) {
         {/* Remove the hidden ShareCardPreview component - no longer needed */}
       </div>
 
-      <Card className={`group p-3 sm:p-5 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30 transition-all cursor-pointer rounded-xl sm:rounded-2xl w-full min-w-0 relative overflow-hidden bg-card/80 sm:bg-card border-border shadow-[0_0_0_1px_rgba(255,255,255,0.06)] sm:h-full sm:flex sm:flex-col ${isWatched(token.address) ? "ring-1 ring-yellow-500/30 shadow-yellow-500/10" : ""}`}>
+      <Card className={`group p-3 sm:p-5 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30 transition-all cursor-pointer rounded-none sm:rounded-2xl w-full min-w-0 relative overflow-hidden bg-card/80 sm:bg-card border-border shadow-[0_0_0_1px_rgba(255,255,255,0.06)] sm:h-full sm:flex sm:flex-col ${isWatched(token.address) ? "ring-1 ring-yellow-500/30 shadow-yellow-500/10" : ""}`}>
         {/* Top-right badge stack - desktop only */}
         <div className="hidden sm:flex absolute top-3 right-3 flex-col gap-1.5 items-end z-10">
           <TokenMicroBadge token={token} context="dashboard" />

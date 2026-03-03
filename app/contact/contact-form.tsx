@@ -31,7 +31,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-card border border-border rounded-xl p-6 text-center">
+      <div className="bg-card border border-border rounded-none p-6 text-center">
         <p className="text-sm font-bold text-green-500 font-mono">
           Message sent!
         </p>
@@ -43,7 +43,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-card border border-border rounded-xl p-6">
+    <div className="bg-card border border-border rounded-none p-6">
       <h2 className="text-sm font-bold uppercase tracking-wide text-center mb-4">
         Send a Message
       </h2>

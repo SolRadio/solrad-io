@@ -395,7 +395,7 @@ export function SolradIntelPanel({
           <SignalArc score={score} color={signalColor} />
 
           <div className="flex items-center gap-3 mt-1">
-            <span className="font-mono font-black leading-none" style={{ fontSize: "56px", color: signalColor }}>
+                <span className="font-mono font-bold leading-none" style={{ fontSize: "56px", color: signalColor }}>
               {score}
             </span>
             <div

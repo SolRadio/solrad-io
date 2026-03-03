@@ -98,13 +98,11 @@ export default function SolanaTokenScannerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <Navbar />
-
-      {/* ── SCREEN 1: HERO ── */}
+{/* ── SCREEN 1: HERO ── */}
       <section className="border-b border-border">
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-black uppercase tracking-tight md:text-6xl text-foreground text-balance">
+            <h1 className="mb-6 text-4xl font-bold uppercase tracking-tight md:text-6xl text-foreground text-balance">
               Solana Token Scanner
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl text-balance leading-relaxed">
@@ -193,7 +191,7 @@ export default function SolanaTokenScannerPage() {
               <Link href="/faq" className="text-primary hover:underline">FAQ</Link>
             </p>
 
-            <h2 className="mb-6 text-3xl font-black uppercase tracking-tight md:text-4xl text-foreground text-balance">
+            <h2 className="mb-6 text-3xl font-bold uppercase tracking-tight md:text-4xl text-foreground text-balance">
               Explore SOLRAD Intelligence
             </h2>
             <p className="mb-8 text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
@@ -238,28 +236,28 @@ export default function SolanaTokenScannerPage() {
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
               <Link
                 href="/"
-                className="group flex items-center gap-2 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary"
+                className="group flex items-center gap-2 rounded-none border border-border bg-card p-4 transition-colors hover:border-primary"
               >
                 <Activity className="h-5 w-5 text-muted-foreground group-hover:text-primary" aria-hidden="true" />
                 <span className="text-sm font-medium">Live Token Feed</span>
               </Link>
               <Link
                 href="/scoring"
-                className="group flex items-center gap-2 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary"
+                className="group flex items-center gap-2 rounded-none border border-border bg-card p-4 transition-colors hover:border-primary"
               >
                 <BarChart3 className="h-5 w-5 text-muted-foreground group-hover:text-primary" aria-hidden="true" />
                 <span className="text-sm font-medium">Scoring System</span>
               </Link>
               <Link
                 href="/watchlist"
-                className="group flex items-center gap-2 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary"
+                className="group flex items-center gap-2 rounded-none border border-border bg-card p-4 transition-colors hover:border-primary"
               >
                 <Eye className="h-5 w-5 text-muted-foreground group-hover:text-primary" aria-hidden="true" />
                 <span className="text-sm font-medium">Watchlist</span>
               </Link>
               <Link
                 href="/research"
-                className="group flex items-center gap-2 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary"
+                className="group flex items-center gap-2 rounded-none border border-border bg-card p-4 transition-colors hover:border-primary"
               >
                 <Search className="h-5 w-5 text-muted-foreground group-hover:text-primary" aria-hidden="true" />
                 <span className="text-sm font-medium">Token Research</span>
@@ -268,8 +266,6 @@ export default function SolanaTokenScannerPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
 
       {/* JSON-LD Schema — preserved from original */}
       <script

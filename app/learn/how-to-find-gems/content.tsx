@@ -145,7 +145,7 @@ export function HowToFindGemsContent() {
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-lime-400 bg-clip-text text-transparent animate-gradient">
+            <h1 className="font-mono text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6 text-foreground">
               How To Find Solana Gems Using SOLRAD
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -176,7 +176,7 @@ export function HowToFindGemsContent() {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="mb-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
                   The SOLRAD Gem Framework
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -221,7 +221,7 @@ export function HowToFindGemsContent() {
         {/* Section 2 — Step-By-Step Guide */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-12 text-center">
               Step-By-Step Guide
             </h2>
 
@@ -236,8 +236,8 @@ export function HowToFindGemsContent() {
                     <div className="flex items-start gap-6">
                       {/* Step Number & Icon */}
                       <div className="flex-shrink-0">
-                        <div className="h-16 w-16 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative">
-                          <span className="text-2xl font-black text-primary font-mono">
+                        <div className="h-16 w-16 rounded-none bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative">
+                          <span className="text-2xl font-bold text-primary font-mono">
                             {step.number}
                           </span>
                           <div className="absolute -bottom-2 -right-2 h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -368,7 +368,7 @@ export function HowToFindGemsContent() {
 
                         {/* Screenshot */}
                         {step.screenshot && (
-                          <div className="mt-6 rounded-xl border border-border overflow-hidden bg-black">
+                          <div className="mt-6 rounded-none border border-border overflow-hidden bg-black">
                             <img
                               src={step.screenshot || "/placeholder.svg"}
                               alt={`Step ${step.number}: ${step.title}`}
@@ -395,7 +395,7 @@ export function HowToFindGemsContent() {
                     <Zap className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-2">
                       SOLRAD Sniper Flow
                     </h2>
                     <p className="text-sm text-muted-foreground">
@@ -410,7 +410,7 @@ export function HowToFindGemsContent() {
                       key={idx}
                       className="flex items-center gap-4 p-3 rounded-lg bg-muted/50 border border-border hover:border-primary/30 transition-colors"
                     >
-                      <span className="text-lg font-black text-primary font-mono">
+                      <span className="text-lg font-bold text-primary font-mono">
                         {(idx + 1).toString().padStart(2, "0")}
                       </span>
                       <span className="text-sm font-medium">{item}</span>
@@ -425,7 +425,7 @@ export function HowToFindGemsContent() {
         {/* Section 4 — Why SOLRAD Works */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8 text-center">
               Why SOLRAD Works
             </h2>
 
@@ -480,7 +480,7 @@ export function HowToFindGemsContent() {
         {/* Final CTA */}
         <section className="bg-card/50 border-y border-border py-16">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-black uppercase tracking-tight mb-4">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-4">
               Ready to find your next gem?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -496,6 +496,5 @@ export function HowToFindGemsContent() {
           </div>
         </section>
       </main>
-    </>
   )
 }

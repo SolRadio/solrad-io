@@ -95,7 +95,7 @@ export function HeroOverlay({ stats, leadTimeProofsMap, onDismiss }: HeroOverlay
             </span>
 
             {/* Headline */}
-            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-foreground leading-[1.1] mb-4 text-balance">
+                <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-tight text-foreground leading-[1.1] mb-4 text-balance">
               The only Solana tool that scores tokens before they trend.
             </h2>
 
@@ -138,7 +138,7 @@ export function HeroOverlay({ stats, leadTimeProofsMap, onDismiss }: HeroOverlay
           {/* RIGHT SIDE: Live stats card (desktop xl+ only) */}
           <div className="hidden xl:flex flex-col gap-3 w-[320px] shrink-0 pointer-events-auto">
             {/* Stats card */}
-            <div className="rounded-xl border border-border bg-card p-4">
+            <div className="rounded-none border border-border bg-card p-4">
               <div className="grid grid-cols-2 gap-3">
                 {/* Signals Issued */}
                 <div className="flex flex-col gap-1">
@@ -189,7 +189,7 @@ export function HeroOverlay({ stats, leadTimeProofsMap, onDismiss }: HeroOverlay
 
             {/* Recent proof feed */}
             {recentProofs.length > 0 && (
-              <div className="rounded-xl border border-border bg-card p-3 space-y-1.5">
+              <div className="rounded-none border border-border bg-card p-3 space-y-1.5">
                 {recentProofs.map((proof, i) => {
                   const hoursAgo = ((Date.now() - proof.proofCreatedAt) / 3600000).toFixed(1)
                   return (

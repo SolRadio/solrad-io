@@ -41,7 +41,7 @@ export function LeadTimeProofPanel({
     const minutesAgo = Math.floor(timeSinceObservation / 1000 / 60)
     
     return (
-      <div className="p-2.5 rounded-xl bg-card border border-amber-500/30">
+      <div className="p-2.5 rounded-none bg-card border border-amber-500/30">
         <div className="flex items-center justify-between mb-1.5">
           <h3 className="text-xs font-bold uppercase text-muted-foreground flex items-center gap-1.5">
             <HourglassIcon className="h-3 w-3" />
@@ -127,7 +127,7 @@ export function LeadTimeProofPanel({
   }
 
   return (
-    <div className="p-2.5 rounded-xl bg-card border">
+    <div className="p-2.5 rounded-none bg-card border">
       <div className="flex items-center justify-between mb-1.5">
         <h3 className="text-xs font-bold uppercase text-muted-foreground flex items-center gap-1.5">
           <Clock className="h-3 w-3" />

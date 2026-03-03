@@ -64,7 +64,7 @@ export function AlertsClient() {
       <div className="mb-8 text-center">
         <div className="flex items-center justify-center gap-3 mb-3">
           <Bell className="h-8 w-8 text-primary" />
-          <h1 className="text-4xl font-black uppercase tracking-tight">
+          <h1 className="text-4xl font-bold uppercase tracking-tight">
             Alerts Center
           </h1>
         </div>
@@ -76,15 +76,15 @@ export function AlertsClient() {
       {/* CHANGE 3 — Urgency stats */}
       <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto text-center">
         <div>
-          <div className="text-2xl font-black text-primary">{"< 60s"}</div>
+          <div className="text-2xl font-bold text-primary">{"< 60s"}</div>
           <div className="text-xs text-muted-foreground font-mono">DETECTION SPEED</div>
         </div>
         <div>
-          <div className="text-2xl font-black text-accent">5</div>
+          <div className="text-2xl font-bold text-accent">5</div>
           <div className="text-xs text-muted-foreground font-mono">ALERT TYPES</div>
         </div>
         <div>
-          <div className="text-2xl font-black text-green-500">FREE</div>
+          <div className="text-2xl font-bold text-green-500">FREE</div>
           <div className="text-xs text-muted-foreground font-mono">FOR PRO MEMBERS</div>
         </div>
       </div>
@@ -94,7 +94,7 @@ export function AlertsClient() {
         {alerts.map((alert) => (
           <div
             key={alert.name}
-            className="bg-card border border-border rounded-xl p-4 flex items-center justify-between gap-4"
+            className="bg-card border border-border rounded-none p-4 flex items-center justify-between gap-4"
           >
             <div className="flex items-start gap-3 flex-1 min-w-0">
               <div className="shrink-0 mt-0.5">{alert.icon}</div>
@@ -118,7 +118,7 @@ export function AlertsClient() {
       {/* CHANGE 4 — Waitlist capture */}
       <div className="max-w-lg mx-auto mt-8 space-y-4">
         {/* Trust note */}
-        <div className="bg-card border border-border rounded-xl p-4 text-sm text-muted-foreground">
+        <div className="bg-card border border-border rounded-none p-4 text-sm text-muted-foreground">
           <span className="text-foreground font-bold">SOLRAD is read-only.</span>{" "}
           No keys. No wallet connection required. Alerts delivered via Telegram or X — you choose your channel when alerts launch.
         </div>
