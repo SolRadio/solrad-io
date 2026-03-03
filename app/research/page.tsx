@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import type { Metadata } from "next"
 import { loadAllResearchReports } from "@/lib/research"
 import { buildMetadata } from "@/lib/meta"
