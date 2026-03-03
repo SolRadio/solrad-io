@@ -191,7 +191,7 @@ function HeroSection({
           {/* Stat 1 */}
           <div className="flex flex-col items-center px-6 sm:px-8">
             <span className="font-mono text-2xl text-white">
-              {loading ? "---" : totalSignals.toLocaleString()}
+              {loading ? "---" : (totalSignals ?? 0).toLocaleString()}
             </span>
             <span
               className="mt-1 font-mono uppercase"
@@ -646,7 +646,7 @@ function SignalPreviewSection({
           >
             {loading
               ? "---"
-              : `${total.toLocaleString()}+ signals recorded · 3 publications on Solana`}
+              : `${(total ?? 0).toLocaleString()}+ signals recorded · 3 publications on Solana`}
           </p>
         </div>
       </div>
