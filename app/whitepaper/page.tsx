@@ -571,10 +571,10 @@ export default function WhitepaperPage() {
                 download="SOLRAD-Proof-Protocol-Whitepaper-v1.pdf"
                 className="inline-block"
               >
-                <Button variant="outline" className="font-mono text-xs tracking-widest border-green-500/30 text-green-400 hover:bg-green-500/10">
-                  <Download className="h-4 w-4 mr-2" />
-                  {"DOWNLOAD PDF"}
-                </Button>
+                <span className="inline-flex items-center gap-2 border border-green-500/30 px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.2em] text-green-400 transition-colors hover:bg-green-500/10">
+                  <Download className="h-4 w-4" />
+                  {"DOWNLOAD PDF \u2192"}
+                </span>
               </a>
             </div>
           </section>
