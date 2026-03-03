@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react"
 import Link from "next/link"
+import { useUser } from "@clerk/nextjs"
 import { TokenImage } from "@/components/token-image"
 import { TokenDetailDrawer } from "@/components/token-detail-drawer"
 import type { TokenScore } from "@/lib/types"
@@ -37,33 +38,8 @@ function scoreColor(s: number) {
   return "#4488FF"
 }
 
-function nodeRadius(vol: number) {
-  if (vol > 1_000_000) return 10
-  if (vol > 500_000) return 8
-  if (vol > 100_000) return 6
-  return 5
-}
-
-function scoreToRing(s: number) {
-  if (s >= 85) return 0.15
-  if (s >= 75) return 0.32
-  if (s >= 65) return 0.52
-  if (s >= 50) return 0.68
-  return 0.78
-}
-
 function mintToAngle(mint: string) {
   return parseInt(mint.slice(0, 8), 16) % 360
-}
-
-function signalBadgeColor(state?: string) {
-  switch (state) {
-    case "PEAK":    return "bg-green-400 text-black"
-    case "STRONG":  return "bg-green-500/20 text-green-400 border border-green-500/40"
-    case "CAUTION": return "bg-amber-500/20 text-amber-400 border border-amber-500/40"
-    case "EARLY":   return "bg-blue-500/20 text-blue-400 border border-blue-500/40"
-    default:        return "bg-zinc-700/40 text-zinc-500 border border-zinc-700"
-  }
 }
 
 function fmtPct(v?: number) {
@@ -150,9 +126,6 @@ function getStablePositions(
 }
 
 /* ─── Radar SVG ────────────────────────────────────────────── */
-/* FIX 2: Pure CSS sweep animation — no RAF, no getElementById */
-/* FIX 3: Token nodes rendered as HTML overlay with real images */
-/* FIX 4: Premium HTML tooltip overlay */
 function RadarSVG({
   tokens,
   loading,
@@ -171,7 +144,7 @@ function RadarSVG({
   const containerRef = useRef<HTMLDivElement>(null)
   const [bounds, setBounds] = useState({ width: 0, height: 0 })
   const [tooltip, setTooltip] = useState<{ x: number; y: number; token: RadarToken } | null>(null)
-  // Stable, collision-aware positions keyed by mint address
+
   const tokenPositions = useMemo(() => {
     return getStablePositions(tokens, 500, 40)
   }, [tokens])
@@ -189,11 +162,7 @@ function RadarSVG({
   }, [])
 
   const rings = [1, 0.75, 0.5, 0.25]
-  const ringStrokes = ["#1A1A1A", "#1A1A1A", "#222222", "#00FF88"]
-  const ringOpacities = [0.6, 0.6, 0.6, 0.2]
   const ringLabels = ["EARLY", "CAUTION", "STRONG", "PEAK"]
-  const ringLabelColors = ["#666", "#666", "#00CC66", "#00FF88"]
-  const ringLabelWeights = ["normal", "normal", "normal", "bold"]
 
   const placeholders = useMemo(() => {
     return Array.from({ length: 10 }, (_, i) => ({
@@ -207,12 +176,8 @@ function RadarSVG({
       <svg
         viewBox="0 0 500 500"
         className="w-full h-full"
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
+        style={{ width: "100%", height: "100%" }}
       >
-        {/* Gradient defs */}
         <defs>
           <radialGradient id="sweepGrad" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#00FF88" stopOpacity="0.05" />
@@ -254,8 +219,8 @@ function RadarSVG({
             cy="250"
             r={r * 220}
             fill="none"
-            stroke={ringStrokes[i]}
-            strokeOpacity={ringOpacities[i]}
+            stroke={["#1A1A1A", "#1A1A1A", "#222222", "#00FF88"][i]}
+            strokeOpacity={[0.6, 0.6, 0.6, 0.2][i]}
             strokeWidth="1"
           />
         ))}
@@ -285,7 +250,7 @@ function RadarSVG({
           )
         })}
 
-        {/* Pure SVG sweep — enhanced with fade trail */}
+        {/* Pure SVG sweep */}
         <g>
           <animateTransform
             attributeName="transform"
@@ -295,17 +260,13 @@ function RadarSVG({
             dur="4s"
             repeatCount="indefinite"
           />
-          {/* Wide fade trail behind the sweep */}
           <path
             d="M250,250 L250,30 A220,220 0 0,1 469,250 Z"
             fill="url(#sweepGrad)"
             fillOpacity="0.04"
           />
-          {/* Primary sweep wedge */}
           <path d="M250,250 L250,30 A220,220 0 0,1 405,95 Z" fill="url(#sweepGrad)" fillOpacity="0.9" />
-          {/* Leading edge line */}
           <line x1="250" y1="250" x2="250" y2="30" stroke="#00FF88" strokeOpacity="0.7" strokeWidth="1.5" />
-          {/* Bright tip dot at center */}
           <circle cx="250" cy="250" r="3" fill="#00FF88" fillOpacity="0.6" />
         </g>
 
@@ -323,7 +284,7 @@ function RadarSVG({
             )
           })}
 
-        {/* SVG pulse rings for high-score tokens (keep in SVG for smooth animation) */}
+        {/* SVG pulse rings for high-score tokens */}
         {!loading &&
           tokens.map((t, idx) => {
             if (t.totalScore < 75) return null
@@ -334,12 +295,10 @@ function RadarSVG({
             const isPeak = t.totalScore >= 85
             return (
               <g key={`pulse-${t.address}`}>
-                {/* Inner pulse ring (all high-score) */}
                 <circle cx={pos.x} cy={pos.y} r={pr + 4} fill="none" stroke={color} strokeOpacity="0.3">
                   <animate attributeName="r" values={`${pr + 2};${pr + 10};${pr + 2}`} dur="2s" repeatCount="indefinite" />
                   <animate attributeName="stroke-opacity" values="0.3;0.05;0.3" dur="2s" repeatCount="indefinite" />
                 </circle>
-                {/* Outer pulse ring — PEAK only */}
                 {isPeak && (
                   <circle cx={pos.x} cy={pos.y} r={pr + 12} fill="none" stroke={color} strokeOpacity="0.15">
                     <animate attributeName="r" values={`${pr + 10};${pr + 20};${pr + 10}`} dur="2.5s" repeatCount="indefinite" />
@@ -377,7 +336,6 @@ function RadarSVG({
                   height: size,
                 }}
               >
-                {/* Ping ring -- appears when sweep passes over this token */}
                 {isPinged && (
                   <div
                     style={{
@@ -394,7 +352,6 @@ function RadarSVG({
                     }}
                   />
                 )}
-                {/* Token circle */}
                 <div
                   style={{
                     width: "100%",
@@ -453,7 +410,6 @@ function RadarSVG({
             boxShadow: `0 0 12px ${scoreColor(tooltip.token.totalScore)}20`,
           }}
         >
-          {/* Symbol + Score on same row */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
             <span style={{ fontFamily: "monospace", fontSize: 13, fontWeight: "bold", color: scoreColor(tooltip.token.totalScore) }}>
               ${tooltip.token.symbol}
@@ -462,7 +418,6 @@ function RadarSVG({
               {tooltip.token.totalScore.toFixed(1)}
             </span>
           </div>
-          {/* Volume + 1h change */}
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4 }}>
             <span style={{ fontFamily: "monospace", fontSize: 9, color: "#555" }}>
               VOL {fmtVol(tooltip.token.volume24h)}
@@ -477,7 +432,6 @@ function RadarSVG({
               </span>
             )}
           </div>
-          {/* Signal tier badge */}
           {tooltip.token.signalState && (
             <div style={{
               fontFamily: "monospace",
@@ -499,6 +453,7 @@ function RadarSVG({
 
 /* ─── Main Radar Client ────────────────────────────────────── */
 export function RadarClient() {
+  const { isSignedIn, isLoaded } = useUser()
   const [tokens, setTokens] = useState<RadarToken[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -539,7 +494,6 @@ export function RadarClient() {
     return () => clearInterval(tick)
   }, [lastFetchTime])
 
-  // Sweep ping tracking -- detect when sweep line passes over high-score tokens
   useEffect(() => {
     if (tokens.length === 0) return
     const interval = setInterval(() => {
@@ -573,7 +527,6 @@ export function RadarClient() {
     : null
 
   return (
-    /* FIX 5: Dot grid background */
     <div
       className="fixed inset-0 overflow-hidden"
       style={{
@@ -582,7 +535,7 @@ export function RadarClient() {
         backgroundSize: "32px 32px",
       }}
     >
-      {/* FIX 5: Glass navbar */}
+      {/* Glass navbar */}
       <nav
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between h-14 px-4 sm:px-6"
         style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(12px)", borderBottom: "1px solid #111111" }}
@@ -616,12 +569,12 @@ export function RadarClient() {
         </div>
       </nav>
 
-      {/* FIX 1: Removed pt/pb classes, use inline padding */}
+      {/* Radar area */}
       <div
         className="absolute inset-0 flex items-center justify-center"
         style={{ paddingTop: "56px", paddingBottom: "56px" }}
       >
-        {/* FIX 5: Radial glow behind radar center */}
+        {/* Radial glow */}
         <div
           style={{
             position: "absolute",
@@ -663,6 +616,51 @@ export function RadarClient() {
         )}
       </div>
 
+      {/* Sign-in gate overlay — shown when Clerk has loaded and user is not signed in */}
+      {isLoaded && !isSignedIn && (
+        <div
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center"
+          style={{
+            background: "rgba(0,0,0,0.82)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #1a1a1a",
+              background: "#050505",
+              padding: "36px 40px",
+              textAlign: "center",
+              maxWidth: 360,
+            }}
+          >
+            <div className="font-mono text-[10px] tracking-[0.25em] text-zinc-500 uppercase mb-3">
+              Access Required
+            </div>
+            <div className="font-mono text-xl font-bold text-foreground tracking-tight mb-2">
+              SOLRAD Radar
+            </div>
+            <div className="font-mono text-[11px] text-zinc-500 leading-relaxed mb-6">
+              Sign in to access the live token radar and signal feed.
+            </div>
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/sign-in"
+                className="font-mono text-[11px] font-bold text-black bg-green-400 px-6 py-2.5 tracking-widest uppercase hover:bg-green-300 transition-colors"
+              >
+                SIGN IN
+              </Link>
+              <Link
+                href="/sign-up"
+                className="font-mono text-[11px] text-green-400 border border-green-500/30 px-6 py-2.5 tracking-widest uppercase hover:bg-green-500/10 transition-colors"
+              >
+                CREATE ACCOUNT
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Signal Tier Legend */}
       {!loading && tokens.length > 0 && (
         <div
@@ -680,12 +678,9 @@ export function RadarClient() {
             minWidth: 120,
           }}
         >
-          {/* Title */}
           <div style={{ fontFamily: "monospace", fontSize: 8, letterSpacing: "0.15em", color: "#52525b", marginBottom: 8, textTransform: "uppercase" }}>
             Signal Tier
           </div>
-
-          {/* Tier rows */}
           {[
             { label: "PEAK",    color: "#00FF88", range: "85+" },
             { label: "STRONG",  color: "#00CC66", range: "75\u201384" },
@@ -707,11 +702,7 @@ export function RadarClient() {
               </span>
             </div>
           ))}
-
-          {/* Divider */}
           <div style={{ borderTop: "1px solid #1a1a1a", margin: "8px 0" }} />
-
-          {/* Circle size section */}
           <div style={{ fontFamily: "monospace", fontSize: 8, letterSpacing: "0.15em", color: "#52525b", marginBottom: 6, textTransform: "uppercase" }}>
             Circle Size
           </div>
@@ -766,7 +757,7 @@ export function RadarClient() {
         </div>
       )}
 
-      {/* ENTER DASHBOARD (subtle) */}
+      {/* ENTER DASHBOARD */}
       <Link
         href="/dashboard"
         className="fixed left-0 right-0 text-center font-mono text-[10px] tracking-wider transition-colors z-30"
@@ -777,7 +768,7 @@ export function RadarClient() {
         {"ENTER DASHBOARD"}
       </Link>
 
-      {/* FIX 5: Glass bottom HUD */}
+      {/* Glass bottom HUD */}
       <div
         className="fixed bottom-0 left-0 right-0 z-30 flex items-center justify-between h-14 px-4 sm:px-6"
         style={{ background: "rgba(0,0,0,0.9)", backdropFilter: "blur(12px)", borderTop: "1px solid #111111" }}
