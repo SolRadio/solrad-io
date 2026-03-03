@@ -1,0 +1,72 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/snapshot",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/research/generate/daily",
+      "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/research/generate/weekly",
+      "schedule": "0 7 * * 1"
+    },
+    {
+      "path": "/api/intel/generate/daily",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/daily-intel-package",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/alpha-ledger",
+      "schedule": "0 */2 * * *"
+    },
+    {
+      "path": "/api/cron/leadtime-harvest",
+      "schedule": "*/30 * * * *"
+    },
+    {
+      "path": "/api/cron/score-velocity",
+      "schedule": "1,6,11,16,21,26,31,36,41,46,51,56 * * * *"
+    },
+    {
+      "path": "/api/cron/ingest",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/publish-proof",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/background-alerts",
+      "schedule": "*/10 * * * *"
+    },
+    {
+      "path": "/api/cron/push-alerts",
+      "schedule": "*/10 * * * *"
+    },
+    {
+      "path": "/api/cron/outcome-refresh",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/cron/intelligence",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/twitter-digest",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/twitter-digest",
+      "schedule": "0 14 * * *"
+    }
+  ]
+}

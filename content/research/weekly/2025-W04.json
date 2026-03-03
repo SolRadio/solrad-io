@@ -1,0 +1,71 @@
+{
+  "title": "Solana Weekly Intelligence: Week 4, 2025",
+  "date": "2025-01-27",
+  "summary": "Comprehensive weekly analysis covering market cycles, emerging narratives, smart money flows, and institutional activity patterns across the Solana ecosystem.",
+  "sections": [
+    {
+      "heading": "Executive Summary",
+      "bullets": [
+        "Total weekly volume: $14.8B, representing 12% increase week-over-week",
+        "New all-time high in unique wallet interactions: 2.1M daily active addresses",
+        "Meme sector consolidation continues: Top 10 tokens hold 68% of sector market cap",
+        "DeFi TVL increased 8.3% to $4.2B as yields compress across major protocols",
+        "Gaming sector showed early momentum with 3 major project announcements"
+      ]
+    },
+    {
+      "heading": "Sector Performance",
+      "bullets": [
+        "Meme tokens: +15% avg, led by established brands with strong communities",
+        "DeFi: +6% avg, stablecoin adoption driving yield farming activity",
+        "Gaming: +22% avg, anticipation building for Q1 launches",
+        "Infrastructure: +3% avg, steady accumulation from long-term holders",
+        "NFT marketplace volume declined 12%, rotation to fungible tokens evident"
+      ]
+    },
+    {
+      "heading": "Smart Money Analysis",
+      "bullets": [
+        "Top 50 wallets increased SOL holdings by 4.2M tokens ($840M equivalent)",
+        "Whale accumulation focused on mid-cap tokens with strong fundamentals",
+        "VC wallets deploying capital into gaming and infrastructure sectors",
+        "Retail participation increased 18%, driven by social media momentum",
+        "MEV bots extracted $12M in value, up from $9.5M previous week"
+      ]
+    },
+    {
+      "heading": "Emerging Narratives",
+      "bullets": [
+        "AI x Crypto gaining traction: 5 new projects launched, strong initial reception",
+        "RWA tokenization discussions increasing, potential catalysts identified",
+        "Cross-chain bridge volume up 31%, Solana positioning as multi-chain hub",
+        "Mobile-first applications seeing adoption surge, payments use case expanding",
+        "Institutional interest indicators: Exchange inflows from custodial addresses up 45%"
+      ]
+    },
+    {
+      "heading": "Risk Assessment",
+      "bullets": [
+        "Market leverage levels elevated but not extreme - caution warranted",
+        "New token scam attempts detected: 23 honeypot contracts identified and flagged",
+        "Regulatory overhang persists but no immediate catalysts identified",
+        "Network congestion during peak hours: Average confirmation time increased to 2.3s",
+        "Correlation with broader crypto market remains high at 0.87"
+      ]
+    },
+    {
+      "heading": "Week Ahead Outlook",
+      "bullets": [
+        "Major protocol upgrade scheduled for January 30 - potential volatility",
+        "3 high-profile token launches planned, combined $50M+ in liquidity commitments",
+        "Macro calendar light - focus on crypto-native catalysts",
+        "Technical levels to watch: $165 support, $185 resistance for SOL",
+        "Continued monitoring of smart money rotation patterns for early signals"
+      ]
+    }
+  ],
+  "relatedTokens": [],
+  "tags": ["weekly-insights", "sector-analysis", "smart-money", "market-outlook"],
+  "type": "weekly",
+  "slug": "2025-W04"
+}

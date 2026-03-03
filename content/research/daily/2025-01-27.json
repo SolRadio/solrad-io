@@ -1,0 +1,47 @@
+{
+  "title": "Solana Market Snapshot: January 27, 2025",
+  "date": "2025-01-27",
+  "summary": "Daily analysis of Solana market trends, volume surges, and emerging token patterns. Key focus on liquidity flows and smart money behavior.",
+  "sections": [
+    {
+      "heading": "Market Overview",
+      "bullets": [
+        "Total tracked tokens: 850+ with SOLRAD scoring active",
+        "Daily volume: $2.4B across DEXs, up 18% from yesterday",
+        "New token launches: 47 contracts detected, 12 passed initial screening",
+        "Liquidity inflows concentrated in established meme sector tokens"
+      ]
+    },
+    {
+      "heading": "Top Volume Movers",
+      "bullets": [
+        "Tokens with 100%+ volume increase show concentrated whale accumulation patterns",
+        "Mid-cap tokens ($1M-$10M) outperforming large caps in 24h gains",
+        "High-frequency trading activity detected in 3 trending tokens",
+        "Smart money wallets rotating from beta tokens to established projects"
+      ]
+    },
+    {
+      "heading": "Risk Alerts",
+      "bullets": [
+        "2 tokens flagged for suspicious liquidity removal patterns",
+        "Contract deployment rate elevated - exercise caution on new launches",
+        "Holder concentration above 60% in 8 trending tokens",
+        "MEV activity increased 23% - potential for sandwich attacks"
+      ]
+    },
+    {
+      "heading": "Opportunities",
+      "bullets": [
+        "Tokens with organic holder growth (+15%+ in 24h) showing sustained momentum",
+        "Low-risk gems: Tokens with locked liquidity and verified contracts gaining traction",
+        "DeFi sector tokens seeing renewed interest after 2-week consolidation",
+        "Gaming tokens positioned for potential breakout based on wallet behavior"
+      ]
+    }
+  ],
+  "relatedTokens": [],
+  "tags": ["daily-summary", "market-trends", "volume-analysis", "risk-alerts"],
+  "type": "daily",
+  "slug": "2025-01-27"
+}

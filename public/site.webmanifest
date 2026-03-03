@@ -1,0 +1,31 @@
+{
+  "name": "SOLRAD - Solana Token Scanner",
+  "short_name": "SOLRAD",
+  "description": "Solana token intelligence platform. Real-time scoring, signal detection, and on-chain analytics.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/apple-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/brand/og-1200x630.png",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ]
+}
