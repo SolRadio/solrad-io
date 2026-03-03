@@ -4,93 +4,83 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.15 0 0);
-  --card: oklch(0.97 0 0);
-  --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(0.97 0 0);
-  --popover-foreground: oklch(0.15 0 0);
-  /* Vibrant magenta/purple from logo */
-  --primary: oklch(0.6 0.28 310);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.95 0 0);
-  --secondary-foreground: oklch(0.15 0 0);
-  --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  /* Vibrant cyan from logo top */
-  --accent: oklch(0.7 0.22 200);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.58 0.24 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  /* Vibrant lime/green from logo bottom */
-  --success: oklch(0.75 0.24 130);
-  --success-foreground: oklch(0.15 0 0);
-  --border: oklch(0.92 0 0);
-  --input: oklch(0.92 0 0);
-  --ring: oklch(0.6 0.28 310);
-  --chart-1: oklch(0.7 0.22 200);
-  --chart-2: oklch(0.6 0.28 310);
-  --chart-3: oklch(0.75 0.24 130);
-  --chart-4: oklch(0.65 0.26 270);
-  --chart-5: oklch(0.68 0.24 160);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --green: #00ff88;
+  --amber: #ffaa00;
+  --blue: #4488ff;
+
+  --background: #000000;
+  --foreground: #e5e5e5;
+  --card: #0a0a0a;
+  --card-foreground: #e5e5e5;
+  --popover: #0a0a0a;
+  --popover-foreground: #e5e5e5;
+  --primary: #00ff88;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #e5e5e5;
+  --muted: #1a1a1a;
+  --muted-foreground: #737373;
+  --accent: #1a1a1a;
+  --accent-foreground: #e5e5e5;
+  --destructive: #ff4444;
+  --destructive-foreground: #e5e5e5;
+  --border: #262626;
+  --input: #262626;
+  --ring: #00ff88;
+  --chart-1: #00ff88;
+  --chart-2: #4488ff;
+  --chart-3: #ffaa00;
+  --chart-4: #ff4444;
+  --chart-5: #aa44ff;
+  --radius: 0.5rem;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #e5e5e5;
+  --sidebar-primary: #00ff88;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #e5e5e5;
+  --sidebar-border: #262626;
+  --sidebar-ring: #00ff88;
 }
 
 .dark {
-  /* Bloomberg-grade deep black base */
-  --background: oklch(0.06 0 0);
-  --foreground: oklch(0.92 0 0);
-  --card: oklch(0.10 0 0);
-  --card-foreground: oklch(0.92 0 0);
-  --popover: oklch(0.10 0 0);
-  --popover-foreground: oklch(0.92 0 0);
-  /* Precise brand purple -- authoritative, not playful */
-  --primary: oklch(0.65 0.25 310);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.12 0 0);
-  --secondary-foreground: oklch(0.92 0 0);
-  --muted: oklch(0.14 0 0);
-  --muted-foreground: oklch(0.55 0 0);
-  /* Terminal cyan -- data-focused accent */
-  --accent: oklch(0.72 0.18 200);
-  --accent-foreground: oklch(0.06 0 0);
-  --destructive: oklch(0.60 0.24 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  /* Precise green -- financial positive */
-  --success: oklch(0.72 0.22 145);
-  --success-foreground: oklch(0.06 0 0);
-  --border: oklch(0.18 0 0);
-  --input: oklch(0.16 0 0);
-  --ring: oklch(0.65 0.25 310);
-  --chart-1: oklch(0.72 0.18 200);
-  --chart-2: oklch(0.65 0.25 310);
-  --chart-3: oklch(0.72 0.22 145);
-  --chart-4: oklch(0.62 0.22 270);
-  --chart-5: oklch(0.68 0.20 160);
-  --sidebar: oklch(0.08 0 0);
-  --sidebar-foreground: oklch(0.92 0 0);
-  --sidebar-primary: oklch(0.65 0.25 310);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.14 0 0);
-  --sidebar-accent-foreground: oklch(0.92 0 0);
-  --sidebar-border: oklch(0.16 0 0);
-  --sidebar-ring: oklch(0.40 0 0);
+  --background: #000000;
+  --foreground: #e5e5e5;
+  --card: #0a0a0a;
+  --card-foreground: #e5e5e5;
+  --popover: #0a0a0a;
+  --popover-foreground: #e5e5e5;
+  --primary: #00ff88;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #e5e5e5;
+  --muted: #1a1a1a;
+  --muted-foreground: #737373;
+  --accent: #1a1a1a;
+  --accent-foreground: #e5e5e5;
+  --destructive: #ff4444;
+  --destructive-foreground: #e5e5e5;
+  --border: #262626;
+  --input: #262626;
+  --ring: #00ff88;
+  --chart-1: #00ff88;
+  --chart-2: #4488ff;
+  --chart-3: #ffaa00;
+  --chart-4: #ff4444;
+  --chart-5: #aa44ff;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #e5e5e5;
+  --sidebar-primary: #00ff88;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #e5e5e5;
+  --sidebar-border: #262626;
+  --sidebar-ring: #00ff88;
 }
 
 @theme inline {
-  /* Custom breakpoint for desktop at exactly 1200px */
-  --breakpoint-desktop: 1200px;
-  
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: var(--font-space-mono), "Courier New", monospace;
+  --font-mono: var(--font-space-mono), "Courier New", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -107,8 +97,6 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -117,6 +105,9 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-green: var(--green);
+  --color-amber: var(--amber);
+  --color-blue: var(--blue);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -140,271 +131,31 @@
   }
 }
 
-/* Market Intel Ticker Animation */
-@keyframes ticker-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.ticker-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.ticker-content {
-  display: inline-block;
-  white-space: nowrap;
-  animation: ticker-scroll 40s linear infinite;
-  padding-right: 100%;
-}
-
-.ticker-content::after {
-  content: attr(data-text);
-  padding-left: 3rem;
-}
-
-.ticker-wrapper:hover .ticker-content {
-  animation-play-state: paused;
-}
-
-/* Scrollbar hide utility for mobile */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Thin scrollbar utility - terminal-grade styling */
-.thin-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
-}
-.thin-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.thin-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.03);
-  margin: 4px 0;
-  border-radius: 4px;
-}
-.thin-scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-}
-.thin-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-.thin-scrollbar::-webkit-scrollbar-thumb:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Micro-animations */
-@keyframes count-up {
+@keyframes radar-sweep {
   from {
-    opacity: 0.5;
+    transform: rotate(0deg);
   }
   to {
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 
-@keyframes badge-glow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 currentColor;
-    opacity: 1;
-  }
-  50% {
-    box-shadow: 0 0 8px 2px currentColor;
-    opacity: 0.9;
-  }
-}
-
-@keyframes breathe {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(0.85);
-  }
-}
-
-.badge-glow {
-  animation: badge-glow 2s ease-in-out infinite;
-}
-
-.breathe-dot {
-  animation: breathe 2s ease-in-out infinite;
-}
-
-/* Rainbow gradient animation for titles */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 4s ease infinite;
-}
-
-/* Token card focus highlight animation */
-@keyframes focus-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(112, 26, 255, 0.4);
-    border-color: rgba(112, 26, 255, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 20px 8px rgba(112, 26, 255, 0.2);
-    border-color: rgba(112, 26, 255, 1);
-  }
-}
-
-[data-focused="true"] {
-  animation: focus-pulse 1.2s ease-in-out;
-  scroll-margin-top: 120px;
-}
-
-/* Mobile Premium Effects */
-
-/* Safe area padding for notched devices */
-.safe-top {
-  padding-top: env(safe-area-inset-top);
-}
-
-.safe-bottom {
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-/* Shimmer effect for loading states */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
+@keyframes pulse-glow {
+  0%,
   100% {
-    background-position: 200% 0;
-  }
-}
-
-.shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-/* Glass card hover effect */
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
-}
-
-.glass-card:active {
-  background: rgba(255, 255, 255, 0.06);
-  transform: scale(0.98);
-}
-
-/* Glow animation for important elements */
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 5px currentColor;
     opacity: 1;
   }
   50% {
-    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
-    opacity: 0.8;
+    opacity: 0.3;
   }
 }
 
-.glow-pulse {
-  animation: glow-pulse 2s ease-in-out infinite;
-}
-
-/* Smooth scale animation for interactive elements */
-.press-scale {
-  transition: transform 0.15s ease-out;
-}
-
-.press-scale:active {
-  transform: scale(0.95);
-}
-
-/* Signal state animations */
-@keyframes signal-early {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+@keyframes scrollDown {
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-    box-shadow: 0 0 12px 4px rgba(168, 85, 247, 0.2);
+    transform: translateY(8px);
   }
-}
-
-@keyframes signal-caution {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 12px 4px rgba(234, 179, 8, 0.2);
-  }
-}
-
-@keyframes signal-strong {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 12px 4px rgba(34, 197, 94, 0.2);
-  }
-}
-
-.signal-early-glow {
-  animation: signal-early 2s ease-in-out infinite;
-}
-
-.signal-caution-glow {
-  animation: signal-caution 2s ease-in-out infinite;
-}
-
-.signal-strong-glow {
-  animation: signal-strong 2s ease-in-out infinite;
-}
-
-/* Gem finder active indicator */
-@keyframes gem-sparkle {
-  0%, 100% {
-    filter: brightness(1) drop-shadow(0 0 2px rgba(6, 182, 212, 0.5));
-  }
-  50% {
-    filter: brightness(1.2) drop-shadow(0 0 8px rgba(6, 182, 212, 0.8));
-  }
-}
-
-.gem-active {
-  animation: gem-sparkle 1.5s ease-in-out infinite;
-}
-
-/* Custom width utility for 13 (52px) */
-.w-13 {
-  width: 52px;
-}
-.h-13 {
-  height: 52px;
 }
